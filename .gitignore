@@ -1,0 +1,8 @@
+# IntelliJ IDEA
+.idea/
+
+# Environment
+env/
+
+# Builds
+lawnmower.jar
