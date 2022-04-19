@@ -6,3 +6,6 @@ env/
 
 # Builds
 lawnmower.jar
+
+# Target
+target/
