@@ -1,0 +1,3 @@
+export default async function run(message: any) {
+    // ...
+}
