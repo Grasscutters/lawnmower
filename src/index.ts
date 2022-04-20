@@ -13,7 +13,7 @@ client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
     import(`./commands/${interaction.commandName}`).then(async (cmd) => {
         await cmd.default(interaction);
-    }).catch((error) => {
+    }).catch(async (error) => {
         import('./commands/default').then(async (cmd) => {
             await cmd.default(interaction);
         });
