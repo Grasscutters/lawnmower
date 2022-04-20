@@ -7,7 +7,7 @@ interface Command {
 }
 
 export default async function register(config: any) {
-const rest = new REST({ version: '9' }).setToken('token');
+const rest = new REST({ version: '9' }).setToken(config.token);
 
 
     const commands = JSON.parse(await fs.readFileSync('./src/db/commands.json', 'utf8')) as Command[];
