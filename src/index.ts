@@ -5,7 +5,7 @@ const client = new Client({
 });
 
 client.on('ready', () => {
-    console.log(`Ready to serve in ${client.guilds.cache.size} guilds.`);
+    console.log(`Ready to serve in ${client.guilds.cache.size} guilds as ${client.user?.tag}.`);
 });
 
 client.on('interactionCreate', async (interaction) => {
