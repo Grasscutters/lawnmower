@@ -1,6 +1,6 @@
 [
     {
-        "name": "default",
-        "description": "Default handler"
+        "name": "help",
+        "description": "Displays a help message"
     }
 ]
