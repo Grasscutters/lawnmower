@@ -1,5 +1,6 @@
 import { Client, Intents } from 'discord.js';
 import getConfig from './util/config';
+import register from './util/registercommands';
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
 });
@@ -27,5 +28,6 @@ client.on('messageCreate', async (message) => {
 
 (async () => {
     const config = await getConfig();
+    register(config);
     client.login(config.token);
 })();

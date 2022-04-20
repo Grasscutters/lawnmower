@@ -1,19 +1,17 @@
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v9';
-import getConfig from './config';
 import fs from 'fs';
 interface Command {
     name: string;
     description: string;
 }
 
-
+export default async function register(config: any) {
 const rest = new REST({ version: '9' }).setToken('token');
 
-(async () => {
-    const commands = JSON.parse(await fs.readFileSync('./src/commands.json', 'utf8')) as Command[];
+
+    const commands = JSON.parse(await fs.readFileSync('./src/db/commands.json', 'utf8')) as Command[];
     try {
-        const config = await getConfig();
         console.log('Started refreshing application (/) commands.');
 
         await rest.put(
@@ -25,4 +23,4 @@ const rest = new REST({ version: '9' }).setToken('token');
     } catch (error) {
         console.error(error);
     }
-})();
+}

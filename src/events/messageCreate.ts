@@ -13,6 +13,7 @@ function find(action: string) {
 
 export default async function run(message: any) {
     if (message.author.bot) return;
+    if (message.channel.id != '965284036333424722') return;
     regexList.some(regex => {
         if (regex.test(message.content)) {
             message.react('👀');
