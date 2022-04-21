@@ -1,10 +1,6 @@
 [
     {
-        "keywords": ["help"],
-        "action": "<insert helpful message here>"
-    },
-    {
-        "keywords": ["in use", "port"],
+        "keywords": ["Address already in use", "java.net.BindException"],
         "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`"
     },
     {
