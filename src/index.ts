@@ -2,7 +2,8 @@ import { Client, Intents } from 'discord.js';
 import getConfig from './util/config';
 import register from './util/registercommands';
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
+    partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
 client.on('ready', () => {
@@ -23,6 +24,12 @@ client.on('interactionCreate', async (interaction) => {
 client.on('messageCreate', async (message) => {
     import('./events/messageCreate').then(async (event) => {
         await event.default(message);
+    });
+});
+
+client.on('messageReactionAdd', async (reaction, user) => {
+    import('./events/messageReactionAdd').then(async (event) => {
+        await event.default(reaction, user, client);
     });
 });
 
