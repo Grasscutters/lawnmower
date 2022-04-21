@@ -12,7 +12,7 @@
         "action": "You don't have java in your PATH. Make sure you have java installed or add it to PATH manually: https://www.java.com/en/download/help/path.html"
     },
     {
-        "keywords": ["have permission to run this command"],
+        "keywords": ["not have permission"],
         "action": "Enter `/permission add <username> *` in your console"
     },
     {
