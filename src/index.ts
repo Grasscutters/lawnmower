@@ -12,10 +12,10 @@ client.on('ready', () => {
 client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
     import(`./commands/${interaction.commandName}`).then(async (cmd) => {
-        await cmd.default(interaction);
+        await cmd.default.process(interaction);
     }).catch(async (error) => {
         import('./commands/default').then(async (cmd) => {
-            await cmd.default(interaction);
+            await cmd.default.process(interaction);
         });
     });
 });
@@ -28,6 +28,8 @@ client.on('messageCreate', async (message) => {
 
 (async () => {
     const config = await getConfig();
-    register(config);
+    await register().then(async (commands) => {
+        client.application?.commands.set(commands, config.target_guild);
+    });
     client.login(config.token);
 })();

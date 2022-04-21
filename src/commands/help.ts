@@ -1,4 +1,5 @@
-export default async function run(interaction: any) {
+import { SlashCommandBuilder } from '@discordjs/builders';
+async function run(interaction: any) {
     interaction.reply({
         content: `** **`,
         ephemeral: true,
@@ -11,4 +12,14 @@ export default async function run(interaction: any) {
             }
         ]
     });
+}
+
+const cmd = new SlashCommandBuilder()
+    .setName('help')
+    .setDescription('Help command')
+
+let _;
+export default _ = {
+    process: run,
+    command: cmd
 }
