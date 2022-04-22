@@ -1,6 +1,9 @@
+import { REST } from '@discordjs/rest';
 import { Client, Intents } from 'discord.js';
 import getConfig from './util/config';
 import register from './util/registercommands';
+import { Routes } from 'discord-api-types/v10';
+
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
     partials: ['MESSAGE', 'CHANNEL', 'REACTION']
@@ -35,8 +38,11 @@ client.on('messageReactionAdd', async (reaction, user) => {
 
 (async () => {
     const config = await getConfig();
+    const rest = new REST({ version: '9' }).setToken(config.token);
     await register().then(async (commands) => {
-        client.application?.commands.set(commands, config.target_guild);
+        await rest.put(Routes.applicationGuildCommands(config.client_id, config.target_guild), {
+            body: commands
+        });
     });
     client.login(config.token);
 })();
