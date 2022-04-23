@@ -1,7 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import findBestMatch from '../util/stringSimilarity';
 import _GM from '../GM.json';
-const GM = _GM as GM;
 
 interface GM {
     array: string[];
@@ -9,6 +8,7 @@ interface GM {
 }
 
 async function run(interaction: any) {
+    const GM = _GM as GM;
     await interaction.deferReply({
         ephemeral: true
     });
@@ -21,16 +21,8 @@ async function run(interaction: any) {
 const cmd = new SlashCommandBuilder()
     .setName('gm')
     .setDescription('Search for items or monsters in the GM Handbook')
+    .addStringOption(o => o.setName('query').setRequired(true).setDescription('The query to search for'));
 
-cmd.addStringOption((option): any => {
-    option.setName('query');
-    option.setRequired(true);
-    option.setDescription('The query to search for');
-
-    _GM.array.forEach(element => {
-        option.addChoice(element, element);
-    });
-});
 let _;
 export default _ = {
     process: run,
