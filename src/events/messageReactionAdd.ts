@@ -14,7 +14,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         if (reaction.emoji.name == '❌') {
             const member = guild?.members.cache.find(member => member.id === user.id);
             // @ts-ignore
-            if (member._roles.includes(`965284035985305682`)) {
+            if (member._roles.includes(`965284035985305682`) && reaction.count >= 2) {
                 reaction.message.delete();
             }
         }
