@@ -18,5 +18,9 @@
     {
         "keywords": ["java.lang.IllegalStateException"],
         "action": "Your JSON is not valid. Check your ExcelConfigData and try again."
+    },
+    {
+        "keywords": ["item id", "char id", "character id", "artifact id", "reliquary id"],
+        "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
     }
 ]
