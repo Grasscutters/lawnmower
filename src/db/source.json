@@ -26,5 +26,9 @@
     {
         "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket"],
         "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`"
+    },
+    {
+        "keywords": ["ExcelBinOutput", "BinOutput"],
+        "action": "For ExcelBinOutput: \nhttps://github.com/Dimbreath/GenshinData\n\nFor BinOutput: \nhttps://github.com/radioegor146/gi-bin-output"
     }
 ]
