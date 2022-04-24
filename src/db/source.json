@@ -28,7 +28,7 @@
         "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`"
     },
     {
-        "keywords": ["where can i find ExcelBinOutput", "where can i find BinOutput", "where is ExcelBinOutput", "where is BinOutput"],
+        "keywords": ["where can i find ExcelBinOutput", "where can i find BinOutput", "where is ExcelBinOutput", "where is BinOutput", "where can i find the ExcelBinOutput", "where can i find the BinOutput", "where is the ExcelBinOutput", "where is the BinOutput", "where can i download ExcelBinOutput", "where can i download BinOutput"],
         "action": "For ExcelBinOutput: \nhttps://github.com/Dimbreath/GenshinData\n\nFor BinOutput: \nhttps://github.com/radioegor146/gi-bin-output"
     },
     {
@@ -38,5 +38,9 @@
     {
         "keywords": ["missing weights"],
         "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Dimbreath/GenshinData/blob/104c21c6530885e450975b13830639e9ca649799/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Dimbreath/GenshinData/blob/a92b5842daa911c095f47ef235b2bcd4b388d65a/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
+    },
+    {
+        "keywords": ["internal server error"],
+        "action": "The feature is probably not yet implemented :pensive:"
     }
 ]
