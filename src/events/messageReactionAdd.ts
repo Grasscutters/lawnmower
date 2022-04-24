@@ -21,7 +21,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         }
 
         if (reaction.emoji.name == 'pato' && reaction.message.id == `967820613362282526`) { // Pato
-            member.roles.add(`967814912250380338`);
+            member.roles.remove(`967814912250380338`);
         }
     }
 }
