@@ -46,5 +46,9 @@
     {
         "keywords": ["unable to access jarfile"],
         "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly."
+    },
+    {
+        "keywords": ["JsonSyntaxException"],
+        "action": "Replace your BinOutput folder from https://github.com/radioegor146/gi-bin-output/"
     }
 ]
