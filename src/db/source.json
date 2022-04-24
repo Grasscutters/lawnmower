@@ -30,5 +30,9 @@
     {
         "keywords": ["ExcelBinOutput", "BinOutput"],
         "action": "For ExcelBinOutput: \nhttps://github.com/Dimbreath/GenshinData\n\nFor BinOutput: \nhttps://github.com/radioegor146/gi-bin-output"
+    },
+    {
+        "keywords": ["TypeAnnotationsScanner"],
+        "action": "Edit the reflection version in `build.gradle` to: \n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`"
     }
 ]
