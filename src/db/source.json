@@ -22,5 +22,9 @@
     {
         "keywords": ["item id", "char id", "character id", "artifact id", "reliquary id"],
         "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
+    },
+    {
+        "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket"],
+        "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`"
     }
 ]

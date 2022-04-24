@@ -5,7 +5,7 @@ function buildSearch(substrings: string[]) {
         substrings
             .map(function (s) { return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); })
             .join('{1,}|') + '{1,}'
-    );
+    , 'gi');
 }
 
 const regexList: RegExp[] = [];
