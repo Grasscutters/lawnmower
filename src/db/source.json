@@ -42,5 +42,9 @@
     {
         "keywords": ["internal server error"],
         "action": "The feature is probably not yet implemented :pensive:"
+    },
+    {
+        "keywords": ["unable to access jarfile"],
+        "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly."
     }
 ]
