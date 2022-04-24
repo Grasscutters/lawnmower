@@ -2,16 +2,23 @@ import { REST } from '@discordjs/rest';
 import { Client, Intents } from 'discord.js';
 import getConfig from './util/config';
 import register from './util/registercommands';
+import getEvents, { findEvent } from './events/eventHandler';
 import { Routes } from 'discord-api-types/v10';
 
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS],
+    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MEMBERS],
     partials: ['MESSAGE', 'CHANNEL', 'REACTION']
 });
 
 client.on('ready', () => {
     console.log(`Ready to serve in ${client.guilds.cache.size} guilds as ${client.user?.tag}.`);
 });
+
+async function registerEvent(event: string, ...args: any) {
+    const events = await getEvents();
+    const eventFunc = findEvent(events, event);
+    if (eventFunc) await eventFunc(...args);
+}
 
 client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
@@ -25,15 +32,15 @@ client.on('interactionCreate', async (interaction) => {
 });
 
 client.on('messageCreate', async (message) => {
-    import('./events/messageCreate').then(async (event) => {
-        await event.default(message);
-    });
+    await registerEvent('messageCreate', message);
 });
 
 client.on('messageReactionAdd', async (reaction, user) => {
-    import('./events/messageReactionAdd').then(async (event) => {
-        await event.default(reaction, user, client);
-    });
+    await registerEvent('messageReactionAdd', reaction, user);
+});
+
+client.on('guildMemberAdd', async (member) => {
+    await registerEvent('guildMemberAdd', member);
 });
 
 (async () => {
