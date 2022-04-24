@@ -40,7 +40,9 @@ client.on('messageReactionAdd', async (reaction, user) => {
 });
 
 client.on('guildMemberAdd', async (member) => {
-    await registerEvent('guildMemberAdd', member);
+    const role = member.guild.roles.cache.find(role => role.id == "967814912250380338");
+    if (!role) return;
+    member.roles.add(role);
 });
 
 (async () => {
