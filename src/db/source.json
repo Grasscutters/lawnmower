@@ -24,7 +24,7 @@
         "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
     },
     {
-        "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket"],
+        "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket", "ECONNREFUSED"],
         "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`"
     },
     {
