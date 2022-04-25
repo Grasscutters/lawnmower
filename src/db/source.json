@@ -48,8 +48,8 @@
         "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly."
     },
     {
-        "keywords": ["JsonSyntaxException"],
-        "action": "Replace your BinOutput folder from https://github.com/radioegor146/gi-bin-output/"
+        "keywords": ["JsonSyntaxException", "binoutput issue"],
+        "action": "Use the BinOutput from radioegor146 instead: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/"
     },
     {
         "keywords": ["scene ids"],
