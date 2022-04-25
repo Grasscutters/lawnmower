@@ -20,10 +20,12 @@ export default async function detect(message: Message): Promise<string> {
 
         // Handle attachments
         if (message.attachments.size > 0) {
-            if (buffer != null) {
-                const recognizeResult = await Tesseract.recognize(buffer);
-                imageOcr = recognizeResult.data.text;
-            }
+            try {
+                if (buffer != null) {
+                    const recognizeResult = await Tesseract.recognize(buffer);
+                    imageOcr = recognizeResult.data.text;
+                }
+            } catch { }
         }
 
         // Handle URLs
