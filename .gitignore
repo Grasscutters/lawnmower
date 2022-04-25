@@ -105,3 +105,4 @@ dist
 
 # Lawnmower
 config.json
+package-lock.json
