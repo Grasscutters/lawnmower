@@ -50,5 +50,9 @@
     {
         "keywords": ["JsonSyntaxException"],
         "action": "Replace your BinOutput folder from https://github.com/radioegor146/gi-bin-output/"
+    },
+    {
+        "keywords": ["scene ids"],
+        "action": "You can find them in your ExcelBinOutput folder (SceneExcelConfigData.json)"
     }
 ]
