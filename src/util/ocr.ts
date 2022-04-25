@@ -28,9 +28,13 @@ export default async function detect(message: Message): Promise<string> {
 
         // Handle URLs
         try {
+            if (message.content.includes('tenor')) return "";
             const recognizeResult = await Tesseract.recognize(await getBufferFromURL(message.content));
             imageOcr = recognizeResult.data.text;
         } catch { }
+
+        if (!message.member) return "";
+        if (!imageOcr) return "";
 
         c.log(`Text detected on ${message.id} (by ${message.member?.nickname}): ${imageOcr}`);
         return imageOcr;
