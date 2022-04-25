@@ -1,8 +1,7 @@
 import source from '../db/source.json';
 import Logger from '../util/Logger';
 import {Message} from "discord.js";
-
-const tesseract = require('node-tesseract-ocr');
+import Tesseract from "tesseract.js";
 const c = new Logger('messageCreate');
 
 function buildSearch(substrings: string[]) {
@@ -30,11 +29,13 @@ export default async function run(message: Message) {
     if (message.attachments.size > 0) {
         let url = message.attachments.first()?.url;
         if (url != null && (url.endsWith('.png') || url.endsWith('.jpg'))) {
-            imageOcr = await tesseract.recognize(url);
+            const recognizeResult = await Tesseract.recognize(url);
+            imageOcr = recognizeResult.data.text;
         }
     }
     if (message.content.endsWith('.png') || message.content.endsWith('.jpg')) {
-        imageOcr = await tesseract.recognize(message.content);
+        const recognizeResult = await Tesseract.recognize(message.content);
+        imageOcr = recognizeResult.data.text;
     }
     regexList.some(regex => {
         if (regex.test(message.content) || regex.test(imageOcr)) {
