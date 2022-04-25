@@ -1,4 +1,6 @@
 import { Client, Guild, MessageReaction, PartialMessageReaction, PartialUser, User } from "discord.js";
+import Logger from "../util/Logger";
+const c = new Logger("messageReactionAdd");
 
 export default async function run(reaction: MessageReaction | PartialMessageReaction, user: User | PartialUser, client: Client) {
     const guild: Guild | undefined = client.guilds.cache.get(`965284035985305680`);
@@ -17,11 +19,13 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         if (reaction.emoji.name == '❌') { // Contributors can delete messages by reacting with a red cross
             if (member.roles.highest.id == `965284035985305682` && reaction.count >= 2) {
                 reaction.message.delete();
+                c.trail(`Deleted message by ${user.username}#${user.discriminator} with ${reaction.count} votes`);
             }
         }
 
         if (reaction.emoji.name == 'pato' && reaction.message.id == `967820613362282526`) { // Pato
             member.roles.remove(`967814912250380338`);
+            c.trail(`Verified user ${user.username}#${user.discriminator}`);
         }
     }
 }

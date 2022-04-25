@@ -4,6 +4,10 @@ import getConfig from './util/config';
 import register from './util/registercommands';
 import getEvents, { findEvent } from './events/eventHandler';
 import { Routes } from 'discord-api-types/v10';
+import Logger from './util/Logger';
+const c = new Logger('Grasscutter');
+const ci = new Logger('Command', 'blue');
+const ce = new Logger('Event', 'yellow');
 
 const client = new Client({
     intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MEMBERS],
@@ -11,18 +15,20 @@ const client = new Client({
 });
 
 client.on('ready', () => {
-    console.log(`Ready to serve in ${client.guilds.cache.size} guilds as ${client.user?.tag}.`);
+    c.log(`Ready to serve in ${client.guilds.cache.size} guilds as ${client.user?.tag}.`);
 });
 
 async function registerEvent(event: string, ...args: any) {
     const events = await getEvents();
     const eventFunc = findEvent(events, event);
+    ce.log(`${event} was called`)
     if (eventFunc) await eventFunc(...args);
 }
 
 client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
     import(`./commands/${interaction.commandName}`).then(async (cmd) => {
+        ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
         await cmd.default.process(interaction);
     }).catch(async (error) => {
         import('./commands/default').then(async (cmd) => {

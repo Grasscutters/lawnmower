@@ -1,5 +1,7 @@
 import { ApplicationCommandDataResolvable, Client } from "discord.js";
 import fs from 'fs';
+import Logger from "./Logger";
+const c = new Logger("Grasscutter");
 
 export default async function register() {
     const allCommands: ApplicationCommandDataResolvable[] = [];
@@ -8,7 +10,7 @@ export default async function register() {
             const target = module.default.command;
             if (!target) return;
             await allCommands.push(target.toJSON());
-            console.log(`Registered command /${target.name}`);
+            c.log(`Registered command /${target.name}`);
         });
     });
     return allCommands;

@@ -1,6 +1,8 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import findBestMatch from '../util/stringSimilarity';
 import _GM from '../GM.json';
+import Logger from '../util/Logger';
+const c = new Logger('/gm');
 
 interface GM {
     array: string[];
@@ -16,6 +18,7 @@ async function run(interaction: any) {
     const matches = findBestMatch(query, GM.array);
     // matches.bestMatch.target
     interaction.editReply(`${matches.bestMatch.target}: ${GM.object[matches.bestMatch.target]}`);
+    c.trail(`${matches.bestMatch.target}: ${GM.object[matches.bestMatch.target]}`);
 }
 
 const cmd = new SlashCommandBuilder()

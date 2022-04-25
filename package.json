@@ -19,6 +19,7 @@
   "homepage": "https://github.com/memetrollsXD/lawnmower#readme",
   "dependencies": {
     "@discordjs/rest": "^0.4.1",
+    "colorts": "^0.1.63",
     "discord-api-types": "^0.31.2",
     "discord.js": "^13.6.0",
     "ts-node-dev": "^1.1.8",

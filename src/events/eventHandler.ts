@@ -1,4 +1,6 @@
 import fs from 'fs';
+import Logger from '../util/Logger';
+const c = new Logger('Grasscutter');
 
 type Events = {
     root: {
@@ -30,6 +32,6 @@ export default async function getEvents(): Promise<Events> {
 export function findEvent(events: Events, target: string): Function | undefined {
     const event = events.root.find((e) => e.name === target);
     if (event) return event.call;
-    console.warn(`Event ${target} not found.`);
+    c.warn(`Event ${target} not found.`);
     return undefined;
 }
