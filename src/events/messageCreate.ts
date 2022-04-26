@@ -8,7 +8,7 @@ function buildSearch(substrings: string[]) {
     return new RegExp(
         substrings
             .map(function (s) {
-                return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                return s.replace(/[.*+?^${}()|[\]\\]/gi, '\\$&');
             })
             .join('{1,}|') + '{1,}'
         , 'gi');
@@ -25,10 +25,10 @@ export default async function run(message: Message) {
     if (message.author.bot) return;
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
     if (message.channel.id != '965284036333424722') return;
-    const imageOcr = await detect(message);
 
-    regexList.some(regex => {
-        if (regex.test(message.content) || regex.test(imageOcr)) {
+    regexList.forEach(async regex => {
+        const ocr = await detect(message);
+        if (regex.test(message.content) || regex.test(ocr)) {
             const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
             message.react('👀');
             if (action) {

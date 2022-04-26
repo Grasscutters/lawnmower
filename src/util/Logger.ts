@@ -30,4 +30,8 @@ export default class Logger {
     public warn(...args: string[]) {
         console.log(`[${this.getDate().white.bold}] ${'WARN'.bgYellow.bold}`, ...args);
     }
+
+    public debug(...args: string[]) {
+        console.log(`[${this.getDate().white.bold}] ${'DEBUG'.bgBlue.bold}`, ...args);
+    }
 }
