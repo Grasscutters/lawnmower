@@ -1,8 +1,14 @@
 import { Message } from "discord.js";
-import Tesseract from "tesseract.js";
 import fetch from 'node-fetch';
+import ocr from 'node-tesseract-ocr';
 import Logger from "./Logger";
 const c = new Logger("OCR", "blue");
+
+const ocrOptions = {
+    lang: 'eng',
+    oem: 1,
+    psm: 3
+}
 
 async function getBufferFromURL(url: string): Promise<Buffer | string> {
     const img = await fetch(url);
@@ -20,20 +26,15 @@ export default async function detect(message: Message): Promise<string> {
 
         // Handle attachments
         if (message.attachments.size > 0) {
-            try {
-                if (buffer != null) {
-                    const recognizeResult = await Tesseract.recognize(buffer);
-                    imageOcr = recognizeResult.data.text;
-                }
-            } catch { }
+            if (buffer != null) {
+                c.trail('Attempting OCR...');
+                ocr.recognize(buffer, ocrOptions).then(text => {
+                    imageOcr = text;
+                }).catch((err: Error) => {
+                    c.log(`Attachment OCR failed on message by ${message.member?.user.username}: ${err.message}`);
+                });
+            }
         }
-
-        // Handle URLs
-        try {
-            if (message.content.includes('tenor')) return "";
-            const recognizeResult = await Tesseract.recognize(await getBufferFromURL(message.content));
-            imageOcr = recognizeResult.data.text;
-        } catch { }
 
         if (!message.member) return "";
         if (!imageOcr) return "";
