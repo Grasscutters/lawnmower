@@ -22,10 +22,5 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
                 c.trail(`Deleted message by ${user.username}#${user.discriminator} with ${reaction.count} votes`);
             }
         }
-
-        if (reaction.emoji.name == 'pato' && reaction.message.id == `967820613362282526`) { // Pato
-            member.roles.remove(`967814912250380338`);
-            c.trail(`Verified user ${user.username}#${user.discriminator}`);
-        }
     }
 }
