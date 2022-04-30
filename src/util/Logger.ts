@@ -23,8 +23,9 @@ export default class Logger {
         console.log(`\t↳ ${args.join(' ').gray}`);
     }
 
-    public error(...args: string[]) {
-        console.log(`[${this.getDate().white.bold}] ${'ERROR'.bgRed.bold}`, ...args);
+    public error(e: Error) {
+        console.log(`[${this.getDate().white.bold}] ${'ERROR'.bgRed.bold}`, e.message);
+        if (e.stack) this.trail(e.stack);
     }
 
     public warn(...args: string[]) {
@@ -32,6 +33,6 @@ export default class Logger {
     }
 
     public debug(...args: string[]) {
-        console.log(`[${this.getDate().white.bold}] ${'DEBUG'.bgBlue.bold}`, ...args);
+        console.log(`[${this.getDate().white.bold}] ${`DEBUG<${this.name}>`.bgBlue.bold}`, ...args);
     }
 }
