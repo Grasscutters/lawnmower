@@ -7,6 +7,10 @@ async function run(interaction: any) {
     });
 }
 
+const cmd = new SlashCommandBuilder()
+    .setName('cmd')
+    .setDescription('desc')
+
 let _;
 export default _ = {
     process: run,

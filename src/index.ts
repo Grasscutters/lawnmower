@@ -31,6 +31,7 @@ client.on('interactionCreate', async (interaction) => {
         ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
         await cmd.default.process(interaction);
     }).catch(async (error) => {
+        console.error(error)
         import('./commands/default').then(async (cmd) => {
             await cmd.default.process(interaction);
         });
