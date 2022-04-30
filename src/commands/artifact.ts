@@ -44,6 +44,7 @@ Available substats:`,
             }
 
             interaction.editReply(`/gart${uid ? ` ${uid}` : ''} ${id} ${translate(mainStat)} ${parseSubstats(subStats)} ${level}`);
+            c.trail(`/gart${uid ? ` ${uid}` : ''} ${id} ${translate(mainStat)} ${parseSubstats(subStats)} ${level}`);
             break;
         default:
             console.log(`Unknown subcommand ${interaction.options.getSubCommand()}`);
