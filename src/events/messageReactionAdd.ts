@@ -16,8 +16,8 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         const member = guild?.members.cache.find(member => member.id === user.id);
         if (!member || !reaction.count) return;
 
-        if (reaction.emoji.name == '❌') { // Contributors can delete messages by reacting with a red cross
-            if (member.roles.highest.id == `965284035985305682` && reaction.count >= 2) {
+        if (reaction.emoji.name == '❌') { // Team members can remove messages by reacting
+            if (member.roles.highest.id == `968896919424339998`) {
                 reaction.message.delete();
                 c.trail(`Deleted message by ${user.username}#${user.discriminator} with ${reaction.count} votes`);
             }
