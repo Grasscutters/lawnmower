@@ -1,59 +1,110 @@
 [
     {
         "keywords": ["Address already in use", "java.net.BindException"],
-        "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`"
+        "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`",
+        "action_cn": "检查是否有其他程序占用了这些端口: `8888, 443, 80, 22102`. 看起来这些占用端口的程序程序阻止了你的程序启动. \n 执行 `netstat -aon | find /i \"listening\"` 来查看占用端口的程序，然后通过执行`taskkill /PID <PID>`来终结它们"
     },
-    {
-        "keywords": ["4206"],
-        "action": "Your device isn't connecting to the server properly. Check your proxy settings (Fiddler, mitm, etc) and try again."
-    },
+    
+    
     {
         "keywords": ["not recognized as an internal or external command"],
-        "action": "You don't have java in your PATH. Make sure you have java installed or add it to PATH manually: https://www.java.com/en/download/help/path.html"
+        "action": "You don't have java in your PATH. Make sure you have java installed or add it to PATH manually: https://www.java.com/en/download/help/path.html",
+        "action_cn": "你的PATH路径中并没有java，确保你已经安装了java并且手动将其加入PATH中: https://www.java.com/en/download/help/path.html"
     },
+    
+    
+    {
+        "keywords": ["unable to access jarfile"],
+        "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly.",
+        "action_cn": "先通过执行命令`gradlew jar`来构建GrassCutter:. 确保你的操作都是正确对照着README和Wiki的安装步骤详解"
+    },
+    
+    
     {
         "keywords": ["not have permission"],
-        "action": "Enter `/permission add <username> *` in your console"
+        "action": "Enter `/permission add <username> *` in your console",
+        "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`"
     },
+    
+    
     {
         "keywords": ["java.lang.IllegalStateException"],
-        "action": "Your JSON is not valid. Check your ExcelConfigData and try again."
+        "action": "Your JSON is not valid. Check your ExcelConfigData and try again.",
+        "action_cn": "你的JSON格式不正确，检查你的ExcelConfigData然后重试"
     },
+    
+    
     {
-        "keywords": ["item id", "char id", "character id", "artifact id", "reliquary id"],
-        "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
+        "keywords": ["JsonSyntaxException", "binoutput issue"],
+        "action": "Use the BinOutput from radioegor146 instead: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/",
+        "action_cn": "将BinOutput替换成radioegor146的: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/"
     },
+    
+    
     {
         "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket", "ECONNREFUSED"],
-        "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`"
+        "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`",
+        "action_cn": "启动在目录`C:\\Program Files\\MongoDB\\Server\\<version>\\bin`中的 `mongod.exe`"
     },
+    
+    
+    {
+        "keywords": ["TypeAnnotationsScanner"],
+        "action": "Edit the reflection version in `build.gradle` to: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`",
+        "action_cn": "更改`build.gradle`中的reflection版本为: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`"
+    },
+    
+    
+    {
+        "keywords": ["missing weights"],
+        "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Dimbreath/GenshinData/blob/104c21c6530885e450975b13830639e9ca649799/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Dimbreath/GenshinData/blob/a92b5842daa911c095f47ef235b2bcd4b388d65a/ExcelBinOutput/ReliquaryAffixExcelConfigData.json",
+        "action_cn": "替换resources/ExcelBinOutput目录里的这些文件:\n\nhttps://github.com/Dimbreath/GenshinData/blob/104c21c6530885e450975b13830639e9ca649799/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Dimbreath/GenshinData/blob/a92b5842daa911c095f47ef235b2bcd4b388d65a/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
+    },
+    
+    {
+        "keywords": ["internal server error"],
+        "action": "The feature is probably not yet implemented :pensive:",
+        "action_cn": "该功能可能在目前并没有实现:pensive:"
+    },
+    {
+        "keywords": ["服务器内部错误"],
+        "action": "The feature is probably not yet implemented :pensive:",
+        "action_cn": "该功能可能在目前并没有实现:pensive:"
+    },
+
+
+    {
+        "keywords": ["4206"],
+        "action": "Your device isn't connecting to the server properly. Check your proxy settings (Fiddler, mitm, etc) and try again.",
+        "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, etc)然后重试。"
+    },
+    
     {
         "keywords": ["where can i find ExcelBinOutput", "where can i find BinOutput", "where is ExcelBinOutput", "where is BinOutput", "where can i find the ExcelBinOutput", "where can i find the BinOutput", "where is the ExcelBinOutput", "where is the BinOutput", "where can i download ExcelBinOutput", "where can i download BinOutput"],
         "action": "For ExcelBinOutput: \n<https://github.com/Dimbreath/GenshinData>\n\nFor BinOutput: \n<https://github.com/radioegor146/gi-bin-output>"
     },
     {
-        "keywords": ["TypeAnnotationsScanner"],
-        "action": "Edit the reflection version in `build.gradle` to: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`"
+        "keywords": ["ExcelBinOutput在哪里", "BinOutput在哪里", "ExcelBinOutput哪里找", " BinOutput哪里找", "哪里能找到ExcelBinOutput", "哪里能找到BinOutput", "该去哪里找ExcelBinOutput", "该去哪里找BinOutput", "ExcelBinOutput哪里下载", "BinOutput哪里下载","ExcelBinOutput哪里有", "BinOutput哪里有"],
+        "action": "ExcelBinOutput: \n<https://github.com/Dimbreath/GenshinData>\n\nBinOutput: \n<https://github.com/radioegor146/gi-bin-output>"
+    },
+
+
+    {
+        "keywords": ["item id", "char id", "character id", "artifact id", "reliquary id"],
+        "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
     },
     {
-        "keywords": ["missing weights"],
-        "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Dimbreath/GenshinData/blob/104c21c6530885e450975b13830639e9ca649799/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Dimbreath/GenshinData/blob/a92b5842daa911c095f47ef235b2bcd4b388d65a/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
+        "keywords": ["物品id", "人物id", "制造品id", "圣遗物id"],
+        "action": "通过执行命令`java -jar grasscutter.jar -handbook`生成\"游戏数据大全\"\n或者\n\n使用Discord命令`/gm <query>`"
     },
-    {
-        "keywords": ["internal server error"],
-        "action": "The feature is probably not yet implemented :pensive:"
-    },
-    {
-        "keywords": ["unable to access jarfile"],
-        "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly."
-    },
-    {
-        "keywords": ["JsonSyntaxException", "binoutput issue"],
-        "action": "Use the BinOutput from radioegor146 instead: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/"
-    },
+    
     {
         "keywords": ["scene ids"],
         "action": "You can find them in your ExcelBinOutput folder (SceneExcelConfigData.json)"
+    },
+    {
+        "keywords": ["场景id"],
+        "action": "在ExcelBinOutput目录里你能找到它们 (SceneExcelConfigData.json)"
     },
     {
         "keywords": ["Conv inconsistency"],
