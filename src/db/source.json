@@ -54,5 +54,9 @@
     {
         "keywords": ["scene ids"],
         "action": "You can find them in your ExcelBinOutput folder (SceneExcelConfigData.json)"
+    },
+    {
+        "keywords": ["Conv inconsistency"],
+        "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect"
     }
 ]
