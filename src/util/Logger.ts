@@ -24,7 +24,7 @@ export default class Logger {
     }
 
     public error(e: Error) {
-        console.log(`[${this.getDate().white.bold}] ${'ERROR'.bgRed.bold}`, e.message);
+        console.log(`[${this.getDate().white.bold}] ${`ERROR<${this.name}>`.bgRed.bold}`, e.message);
         if (e.stack) this.trail(e.stack);
     }
 
