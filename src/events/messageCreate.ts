@@ -1,7 +1,6 @@
 import source from '../db/source.json';
 import Logger from '../util/Logger';
 import { Message } from "discord.js";
-import detect from '../util/ocr';
 const c = new Logger('messageCreate');
 
 function buildSearch(substrings: string[]) {
@@ -38,14 +37,7 @@ export default async function run(message: Message) {
     if (!supportChannels.includes(message.channel.id)) return;
 
     regexList.forEach(async regex => {
-        let ocr: string = "";
-        await detect(message).then(result => {
-            ocr = result;
-        }).catch(err => {
-            return;
-        });
-        if (!ocr) ocr = "";
-        if (regex.test(message.content) || regex.test(ocr)) {
+        if (regex.test(message.content)) {
             const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
             message.react('👀');
             if (action) {
