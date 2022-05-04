@@ -57,7 +57,6 @@ export default async function run(message: Message) {
                         if (action.action) message.reply(action.action);
                         break;
                 }
-                console.log(action);
                 c.trail(`Match found for ${action.keywords[0]}`)
             }
         }

@@ -47,7 +47,7 @@ Available substats:`,
             c.trail(`/gart${uid ? ` ${uid}` : ''} ${id} ${translate(mainStat)} ${parseSubstats(subStats)} ${level}`);
             break;
         default:
-            console.log(`Unknown subcommand ${interaction.options.getSubCommand()}`);
+            c.warn(`Unknown subcommand ${interaction.options.getSubCommand()}`);
             break;
     }
 }
