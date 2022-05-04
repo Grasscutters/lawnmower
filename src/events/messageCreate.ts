@@ -38,7 +38,13 @@ export default async function run(message: Message) {
     if (!supportChannels.includes(message.channel.id)) return;
 
     regexList.forEach(async regex => {
-        const ocr = await detect(message);
+        let ocr: string = "";
+        await detect(message).then(result => {
+            ocr = result;
+        }).catch(err => {
+            return;
+        });
+        if (!ocr) ocr = "";
         if (regex.test(message.content) || regex.test(ocr)) {
             const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
             message.react('👀');
