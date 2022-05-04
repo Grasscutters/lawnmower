@@ -21,7 +21,7 @@ export default async function detect(message: Message): Promise<string> {
             await ocr.recognize(buffer, ocrOptions).then(text => {
                 resolve(text);
             }).catch((err: Error) => {
-                c.error(`OCR failed on ${message.id}: ${err.message}`);
+                c.error(err);
                 reject(err);
             });
         }
