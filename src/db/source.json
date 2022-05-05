@@ -16,14 +16,14 @@
     {
         "keywords": ["unable to access jarfile"],
         "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly.",
-        "action_cn": "先通过执行命令`gradlew jar`来构建GrassCutter:. 确保你的操作都是正确对照着README和Wiki的安装步骤详解"
+        "action_cn": "先通过执行命令`gradlew jar`来构建GrassCutter: 确保你的操作都是正确对照着README和Wiki的安装步骤来的"
     },
     
     
     {
         "keywords": ["not have permission"],
         "action": "Enter `/permission add <username> *` in your console",
-        "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`"
+        "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`并回车"
     },
     
     
@@ -76,16 +76,16 @@
     {
         "keywords": ["4206"],
         "action": "Your device isn't connecting to the server properly. Check your proxy settings (Fiddler, mitm, etc) and try again.",
-        "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, etc)然后重试。"
+        "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, 等)然后重试。"
     },
     
     {
         "keywords": ["where can i find ExcelBinOutput", "where can i find BinOutput", "where is ExcelBinOutput", "where is BinOutput", "where can i find the ExcelBinOutput", "where can i find the BinOutput", "where is the ExcelBinOutput", "where is the BinOutput", "where can i download ExcelBinOutput", "where can i download BinOutput"],
-        "action": "For ExcelBinOutput: \n<https://github.com/Dimbreath/GenshinData>\n\nFor BinOutput: \n<https://github.com/radioegor146/gi-bin-output>"
+        "action": "You can get them all from here: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
     },
     {
         "keywords": ["ExcelBinOutput在哪里", "BinOutput在哪里", "ExcelBinOutput哪里找", " BinOutput哪里找", "哪里能找到ExcelBinOutput", "哪里能找到BinOutput", "该去哪里找ExcelBinOutput", "该去哪里找BinOutput", "ExcelBinOutput哪里下载", "BinOutput哪里下载","ExcelBinOutput哪里有", "BinOutput哪里有"],
-        "action": "ExcelBinOutput: \n<https://github.com/Dimbreath/GenshinData>\n\nBinOutput: \n<https://github.com/radioegor146/gi-bin-output>"
+        "action": "ExcelBinOutput: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
     },
 
 
@@ -108,6 +108,7 @@
     },
     {
         "keywords": ["Conv inconsistency"],
-        "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect"
+        "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect",
+        "action_cn": "这个错误通常在你有活跃的客户端连接着服务端的同时重启了服务端所导致，服务端接收的包错误的原因是无法识别会话，这个错误会在客户端尝试重新连接后消失。"
     }
 ]
