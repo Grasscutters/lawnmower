@@ -3,11 +3,9 @@
  * @description Send an embed to #message-logs
 */
 
-import { Client, ColorResolvable, TextChannel, User } from "discord.js";
-import Logger from "./Logger";
-const c = new Logger("sendToLog");
+import { Client, ColorResolvable, MessageAttachment, TextChannel, User } from "discord.js";
 
-export default async function sendToLog(title: string, description: string, color: ColorResolvable, user: User | null, client: Client) {
+export default async function sendToLog(title: string, description: string, color: ColorResolvable, user: User | null, client: Client, attachments?: MessageAttachment[]) {
     const channel = client.channels.cache.get("975624009674805270") as TextChannel;
     if (!channel) return;
     const embed = {
@@ -16,12 +14,13 @@ export default async function sendToLog(title: string, description: string, colo
         color: color,
         footer: {
             text: user!.tag,
-            iconURL: `https://cdn.discordapp.com/avatars/${user!.id}/${user!.avatar}.png`
+            iconURL: `https://cdn.discordapp.com/avatars/${user!.id || 0}/${user!.avatar || 0}.png`
         },
         timestamp: Date.now()
     };
     await channel.send({
         embeds: [embed],
-        content: "** **"
+        content: "** **",
+        attachments: attachments || undefined
     });
 }

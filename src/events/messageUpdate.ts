@@ -7,5 +7,6 @@ export default async function run(oldMessage: Message<boolean> | PartialMessage,
     if (newMessage.author!.bot) return;
 
     c.log(`Message edited by ${newMessage.author!.tag} (${newMessage.id})`);
-    sendToLog(`Message edited in <#${newMessage.channel.id}>`, `${newMessage.author!.tag} edited their message ${newMessage.id} to: ${newMessage.content}`, 'BLUE', newMessage.author, oldMessage.client);
+    if (newMessage.cleanContent) c.trail(newMessage.cleanContent);
+    sendToLog(`Message edited in ${newMessage.channel.toString()}`, `${newMessage.id}: ${newMessage.content}`, 'BLUE', newMessage.author, oldMessage.client);
 }
