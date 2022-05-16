@@ -50,6 +50,19 @@ client.on('guildMemberAdd', async (member) => {
     await registerEvent('guildMemberAdd', member);
 });
 
+client.on('messageUpdate', async (oldMessage, newMessage) => {
+    await registerEvent('messageUpdate', oldMessage, newMessage);
+});
+
+client.on('messageDelete', async (message) => {
+    await registerEvent('messageDelete', message);
+});
+
+// This isn't going to be used but still nice to have
+client.on('messageDeleteBulk', async (messages) => {
+    await registerEvent('messageDeleteBulk', messages);
+});
+
 (async () => {
     const config = await getConfig();
     const rest = new REST({ version: '9' }).setToken(config.token);
