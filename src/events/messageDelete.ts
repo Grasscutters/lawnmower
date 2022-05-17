@@ -4,7 +4,7 @@ import sendToLog from "../util/sendToLog";
 const c = new Logger("messageDelete", "red");
 
 export default async function run(message: Message) {
-    c.log(`Message in ${message.channel.toString()} deleted by ${message.author!.tag}`);
+    c.log(`Message in ${message.channel.toString()} deleted by ${message.author?.tag || "unknown"}`);
     c.trail(message.cleanContent);
 
     sendToLog(`Message deleted in ${message.channel.toString()}`, message.cleanContent, 'RED', message.author, message.client); // TODO: Add attachments
