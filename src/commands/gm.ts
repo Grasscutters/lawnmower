@@ -2,6 +2,7 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import findBestMatch from '../util/stringSimilarity';
 import _GM from '../GM.json';
 import Logger from '../util/Logger';
+import { CommandInteraction } from 'discord.js';
 const c = new Logger('/gm');
 
 interface GM {
@@ -9,12 +10,12 @@ interface GM {
     object: { [key: string]: string };
 }
 
-async function run(interaction: any) {
+async function run(interaction: CommandInteraction) {
     const GM = _GM as GM;
     await interaction.deferReply({
         ephemeral: true
     });
-    const query = interaction.options.getString('query');
+    const query = interaction.options.getString('query') || "";
     const matches = findBestMatch(query, GM.array);
     // matches.bestMatch.target
     interaction.editReply(`${matches.bestMatch.target}: ${GM.object[matches.bestMatch.target]}`);

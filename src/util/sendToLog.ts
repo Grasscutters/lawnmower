@@ -15,7 +15,7 @@ export default async function sendToLog(title: string, description: string, colo
         description: description,
         color: color,
         footer: {
-            text: user!.tag,
+            text: user?.tag || "Unknown",
             iconURL: `https://cdn.discordapp.com/avatars/${user!.id || 0}/${user!.avatar || 0}.png`
         },
         timestamp: Date.now()

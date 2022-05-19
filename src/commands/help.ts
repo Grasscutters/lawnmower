@@ -1,5 +1,6 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
-async function run(interaction: any) {
+import { CommandInteraction } from 'discord.js';
+async function run(interaction: CommandInteraction) {
     interaction.reply({
         content: `** **`,
         ephemeral: true,
