@@ -36,8 +36,8 @@
     
     {
         "keywords": ["JsonSyntaxException", "binoutput issue"],
-        "action": "Use the BinOutput from radioegor146 instead: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/",
-        "action_cn": "将BinOutput替换成radioegor146的: https://github.com/radioegor146/gi-bin-output/tree/master/2.5.52/Data/"
+        "action": "Use the BinOutput from radioegor146 instead: <https://github.com/Koko-boya/Grasscutter_Resources>",
+        "action_cn": "将BinOutput替换成radioegor146的: <https://github.com/Koko-boya/Grasscutter_Resources>"
     },
     
     
