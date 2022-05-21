@@ -11,8 +11,8 @@ async function run(interaction: CommandInteraction) {
         .setDescription(input.answer)
         .setColor('#9f2b2b')
         .setFooter({
-            text: `${interaction.member!.user.username} • ${new Date().toLocaleString()}`,
-            iconURL: `https://cdn.discordapp.com/avatars/${interaction.member!.user.id}/${interaction.member!.user.avatar}.png`
+            text: `${interaction.member?.user.username || "???"} • ${new Date().toLocaleString()}`,
+            iconURL: `https://cdn.discordapp.com/avatars/${interaction.member?.user.id || "0"}/${interaction.member?.user.avatar || "0"}.png`
         });
 
     interaction.reply({
