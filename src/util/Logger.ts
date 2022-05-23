@@ -32,7 +32,7 @@ export default class Logger {
         console.log(`[${this.getDate().white.bold}] ${'WARN'.bgYellow.bold}`, ...args);
     }
 
-    public debug(...args: string[]) {
+    public debug(...args: any) {
         console.log(`[${this.getDate().white.bold}] ${`DEBUG<${this.name}>`.bgBlue.bold}`, ...args);
     }
 }
