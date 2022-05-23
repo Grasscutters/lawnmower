@@ -1,0 +1,32 @@
+[
+    {
+        "lang_code": "tr",
+        "title": "Grasscutter Desteğe Hoşgeldiniz!",
+        "content": "Kanallara erişim için, sorununuzu çözmek için wiki'yi veya diğer belgeleri okuduğunuzu onaylamanız gerekir.\n\nGrasscutter'ı kullanmak için, biraz teknoloji bilgisine ihtiyacınız olacak. Proxy veya bağlantı noktası yönlendirme gibi terimlere aşina değilseniz, bunun yerine deneysel sunucularda bir sunucuya katılmanız en iyisidir.\n\nBu şartları anlıyorsanız, #bot-commands kanalına `/verify [şifre]` yazarak doğrulamayı yapın. Şifre wiki'de gizlenmiştir"
+    },
+    {
+        "lang_code": "ru",
+        "title": "Добро пожаловать в службу поддержки Grasscutter!",
+        "content": "Для получения доступа к каналам поддержки необходимо подтвердить, что Вы прочитали вики или другую документацию, в процессе поиска решения.\n\nЧтобы использовать Grasscutter, вам потребуются некоторые знания в айти-сфере. Если вы не знакомы с такими терминами, как прокси или перенаправление портов, Вам лучше присоединиться к готовому серверу в канале экспериментальных серверов.\n\nЕсли вы понимаете эти термины, пройдите верификацию в канале #bot-commands с помощью команды `/verify <пароль>`. Пароль спрятан на вики-разделе гитхаба."
+    },
+    {
+        "lang_code": "fr",
+        "title": "Bienvenue sur le support Grasscutter!",
+        "content": "Pour accéder aux salons, vous allez devoir confirmer que vous avez lu le wiki ou toute autre documentation pour résoudre votre problème.\n\nPour utiliser Grasscutter, vous devez avoir quelques connaissances informatiques, Si vous n'etes pas famillier avec des termes comme proxy ou port forwarding il est préférable que vous rejoingnez un serveur dans #experimental-servers.\n\nSi vous comprenez ceci, allez vérifier dans #bot-commands en utilisant la commande `/verify <password>`. Le mot de passe est caché dans le wiki."
+    },
+    {
+        "lang_code": "cn",
+        "title": "欢迎来到 Grasscutter 支持频道！",
+        "content": "为访问这个频道，你需要确认你已经阅读了 wiki 或者其他文档来解决你的问题。\n\n为使用 Grasscutter，你需要精通~~亿点~~知识。如果你对 代理 或者 端口转发 等内容不熟悉的话，那还是玩 experimental-servers 里面的服务器吧。\n\n如果你的确了解这些内容，在 #bot-commands 中使用 `/verify <密码>` 命令进行认证。密码隐藏在 wiki 里面。"
+    },
+    {
+        "lang_code": "es",
+        "title": "¡Bienvenid@ al Soporte de Grasscutter!",
+        "content": "Para acceder a los canales, necesitarás confirmar que has leído la wiki u otra documentación para solucionar tu problema.\n\nPara usar Grasscutter, necesitarás algunos conocimientos técnicos. Si desconoces términos como `proxy` o `port forwarding` lo mejor sería unirte a un servidor en #experimental-servers.\n\nSi entiendes estos términos, verifícate en #bot-commands  usando el comando `/verify <contraseña>`. La contraseña está escondida en la wiki."
+    },
+    {
+        "lang_code": "us",
+        "title": "Welcome to Grasscutter Support!",
+        "content": "To access the channels, you'll need to confirm that you've read the wiki or other documentation to fix your issue.\n\nTo use Grasscutter, you will need some tech savvy knowledge. If you're not familiar with terms like `proxy` or `port forwarding` it's best for you to join a server in #experimental-servers instead.\n\nIf you do understand these terms, verify in bot-commands by using the `/verify <password>` command. The password is hidden in the wiki."
+    }
+]
