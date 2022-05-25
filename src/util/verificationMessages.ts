@@ -3,8 +3,10 @@ import vm from '../db/verificationMessages.json';
 import Logger from './Logger';
 const c = new Logger(`verificationMessages`);
 
-export default async function run(interaction: CommandInteraction) {
+export default async function run(interaction: CommandInteraction, specify?: string) {
     vm.forEach(v => {
+        if (specify && v.lang_code != specify) return;
+
         const embed = new MessageEmbed();
         embed.setTitle(`:flag_${v.lang_code}: **${v.title}**`)
             .setDescription(v.content)

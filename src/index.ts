@@ -5,7 +5,7 @@ import register from './util/registercommands';
 import getEvents, { findEvent } from './events/eventHandler';
 import { Routes } from 'discord-api-types/v10';
 import Logger from './util/Logger';
-const c = new Logger('Grasscutter');
+const c = new Logger('Lawnmower');
 const ci = new Logger('Command', 'blue');
 const ce = new Logger('Event', 'yellow');
 
@@ -27,11 +27,10 @@ async function registerEvent(event: string, ...args: any) {
 
 client.on('interactionCreate', async (interaction) => {
     if (!interaction.isCommand()) return;
+    ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
     import(`./commands/${interaction.commandName}`).then(async (cmd) => {
-        ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
         await cmd.default.process(interaction);
     }).catch(async (error) => {
-        console.error(error)
         import('./commands/default').then(async (cmd) => {
             await cmd.default.process(interaction);
         });
