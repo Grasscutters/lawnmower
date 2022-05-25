@@ -24,7 +24,7 @@ source.forEach(s => {
     actionList.push({ action: s.action, keywords: s.keywords, action_cn: s.action_cn });
 });
 
-const $support = '965284036333424722';
+const $support = '978314904220106832';
 const $support_cn = '967477370997076079';
 const supportChannels: string[] = [
     $support,
