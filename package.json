@@ -1,0 +1,29 @@
+{
+  "name": "lawnmower",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npx ts-node-dev --respawn --transpile-only src/index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/memetrollsXD/lawnmower.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/memetrollsXD/lawnmower/issues"
+  },
+  "homepage": "https://github.com/memetrollsXD/lawnmower#readme",
+  "dependencies": {
+    "@discordjs/rest": "^0.4.1",
+    "colorts": "^0.1.63",
+    "discord-api-types": "^0.31.2",
+    "discord.js": "^13.6.0",
+    "node-tesseract-ocr": "^2.2.1",
+    "ts-node-dev": "^1.1.8",
+    "typescript": "^4.6.3"
+  }
+}
