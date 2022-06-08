@@ -38,7 +38,6 @@ export default async function run(message: Message) {
 
     blacklist.forEach(b => {
         if (message.content.toLowerCase().includes(b.toLowerCase())) {
-            sendToLog(`Blacklisted word in ${message.channel.toString()}`, `Message: ${message.content}\nID: ${message.id}`, 'RED', message.author, message.client);
             message.delete();
             return;
         }

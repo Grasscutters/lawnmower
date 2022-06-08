@@ -8,8 +8,7 @@ export default async function run(oldMessage: Message<boolean> | PartialMessage,
     if (newMessage.author?.bot) return;
 
     blacklist.forEach(b => {
-        if (oldMessage.content?.toLowerCase().includes(b.toLowerCase())) {
-            sendToLog(`Blacklisted word in ${newMessage.channel.toString()}`, `Message: ${newMessage.content}\nID: ${newMessage.id}`, 'RED', newMessage.author, newMessage.client);
+        if (newMessage.content?.toLowerCase().includes(b.toLowerCase())) {
             newMessage.delete();
             return;
         }
