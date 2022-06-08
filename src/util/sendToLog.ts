@@ -8,6 +8,9 @@ import Logger from "./Logger";
 const c = new Logger("sendToLog");
 
 export default async function sendToLog(title: string, description: string, color: ColorResolvable, user: User | null, client: Client, attachments?: MessageAttachment[]) {
+    c.log(`Sending embed to #message-logs`);
+    c.trail(title);
+    c.trail(description);
     const channel = client.channels.cache.get("975624009674805270") as TextChannel;
     if (!channel) return;
     const embed = {

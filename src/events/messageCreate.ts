@@ -2,6 +2,7 @@ import source from '../db/source.json';
 import blacklist from '../db/blacklist.json';
 import Logger from '../util/Logger';
 import { Message } from "discord.js";
+import sendToLog from '../util/sendToLog';
 const c = new Logger('messageCreate');
 
 function buildSearch(substrings: string[]) {
@@ -33,14 +34,15 @@ const supportChannels: string[] = [
 ];
 
 export default async function run(message: Message) {
+    if (message.author.bot) return;
+
     blacklist.forEach(b => {
         if (message.content.toLowerCase().includes(b.toLowerCase())) {
+            sendToLog(`Blacklisted word in ${message.channel.toString()}`, `Message: ${message.content}\nID: ${message.id}`, 'RED', message.author, message.client);
             message.delete();
             return;
         }
     });
-    
-    if (message.author.bot) return;
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
     if (!supportChannels.includes(message.channel.id)) return;

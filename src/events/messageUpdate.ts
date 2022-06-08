@@ -1,10 +1,19 @@
 import { Message, PartialMessage } from "discord.js";
 import Logger from "../util/Logger";
 import sendToLog from "../util/sendToLog";
+import blacklist from '../db/blacklist.json';
 const c = new Logger("messageUpdate", "cyan");
 
 export default async function run(oldMessage: Message<boolean> | PartialMessage, newMessage: Message<boolean> | PartialMessage) {
     if (newMessage.author?.bot) return;
+
+    blacklist.forEach(b => {
+        if (oldMessage.content?.toLowerCase().includes(b.toLowerCase())) {
+            sendToLog(`Blacklisted word in ${newMessage.channel.toString()}`, `Message: ${newMessage.content}\nID: ${newMessage.id}`, 'RED', newMessage.author, newMessage.client);
+            newMessage.delete();
+            return;
+        }
+    });
 
     c.log(`Message edited by ${newMessage.author?.tag || ""} (${newMessage.id})`);
     if (newMessage.cleanContent) c.trail(newMessage.cleanContent);
