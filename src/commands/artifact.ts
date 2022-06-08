@@ -11,7 +11,6 @@ function printStats(): string {
 }
 
 async function run(interaction: any) {
-    c.debug(interaction.options);
     await interaction.deferReply({
         ephemeral: true
     });

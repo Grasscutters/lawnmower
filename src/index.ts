@@ -31,6 +31,7 @@ client.on('interactionCreate', async (interaction) => {
     import(`./commands/${interaction.commandName}`).then(async (cmd) => {
         await cmd.default.process(interaction);
     }).catch(async (error) => {
+        c.error(error as unknown as Error);
         import('./commands/default').then(async (cmd) => {
             await cmd.default.process(interaction);
         });

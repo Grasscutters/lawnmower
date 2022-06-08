@@ -1,4 +1,5 @@
 import source from '../db/source.json';
+import blacklist from '../db/blacklist.json';
 import Logger from '../util/Logger';
 import { Message } from "discord.js";
 const c = new Logger('messageCreate');
@@ -32,6 +33,13 @@ const supportChannels: string[] = [
 ];
 
 export default async function run(message: Message) {
+    blacklist.forEach(b => {
+        if (message.content.toLowerCase().includes(b.toLowerCase())) {
+            message.delete();
+            return;
+        }
+    });
+    
     if (message.author.bot) return;
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 

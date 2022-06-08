@@ -106,3 +106,5 @@ dist
 # Lawnmower
 config.json
 package-lock.json
+# Updates too frequently:
+blacklist.json
