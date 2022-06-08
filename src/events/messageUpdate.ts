@@ -8,7 +8,7 @@ export default async function run(oldMessage: Message<boolean> | PartialMessage,
     if (newMessage.author?.bot) return;
 
     blacklist.forEach(b => {
-        if (newMessage.content?.toLowerCase().includes(b.toLowerCase())) {
+        if (newMessage.content?.toLowerCase().split(' ').join('').includes(b.toLowerCase())) {
             newMessage.delete();
             return;
         }

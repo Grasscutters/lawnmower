@@ -37,7 +37,7 @@ export default async function run(message: Message) {
     if (message.author.bot) return;
 
     blacklist.forEach(b => {
-        if (message.content.toLowerCase().includes(b.toLowerCase())) {
+        if (message.content.toLowerCase().split(' ').join('').includes(b.toLowerCase())) {
             message.delete();
             return;
         }
