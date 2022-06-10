@@ -19,7 +19,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         if (reaction.emoji.name == '🔨' && reaction.count < 2) {
             reaction.message.reply(`Please read <#978197435056787597>.`);
             setInterval(() => {
-                reaction.message.delete();
+                reaction.message.delete().catch();
             }, 5000);
         }
     }
