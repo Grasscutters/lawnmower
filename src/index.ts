@@ -73,3 +73,15 @@ client.on('messageDeleteBulk', async (messages) => {
     });
     client.login(config.token);
 })();
+
+// Handles uncaught exceptions
+process.on('uncaughtException', (error) => {
+    c.error(error);
+});
+
+// Handles unhandled rejections
+process.on('unhandledRejection', (reason, promise) => {
+    if (reason instanceof Error) {
+        c.error(reason);
+    }
+});
