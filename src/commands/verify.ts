@@ -2,10 +2,11 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction, GuildMemberRoleManager, RoleManager } from 'discord.js';
 import crypto from 'crypto';
 import Logger from '../util/Logger';
+import config from '../config.json';
 const c = new Logger('/verify');
 
 async function run(interaction: CommandInteraction) {
-    const password = 'e8a8013f03caa9935eb63bf2cdbb6b35'; // It's an easy password, md5 is useless here
+    const password = config.support_password_hash; // You're hopeless if you checked here for the password.
     const hash = crypto.createHash('md5');
     const input = interaction.options.getString('password', true);
     const verifiedRole = (interaction.guild?.roles as RoleManager).cache.get('978201137972912198');

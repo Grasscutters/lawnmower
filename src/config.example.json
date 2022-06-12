@@ -1,5 +1,6 @@
 {
     "token": "xxxx",
     "client_id": "xxxx",
-    "target_guild": "xxxx"
+    "target_guild": "xxxx",
+    "support_password_hash": "e8a8013f03caa9935eb63bf2cdbb6b35"
 }
