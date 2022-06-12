@@ -19,8 +19,13 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
     if (!user.bot && !reaction.message.author?.bot) {
         if (!reaction.count) return;
 
-        if (reaction.emoji.name == '🔨' && reaction.count < 2) {
-            const msg = await reaction.message.reply(`Please read <#978197435056787597>.`);
+        if (reaction.emoji.name == '🔨' && reaction.count < 2 && WHITELISTED_CHANNELS.includes(Number(reaction.message.channelId))) {
+            const msg = await reaction.message.reply({
+                content: `Please read <#978197435056787597>.`,
+                allowedMentions: {
+                    repliedUser: false
+                },
+            });
             setTimeout(() => {
                 msg.delete();
             }, 3000);
