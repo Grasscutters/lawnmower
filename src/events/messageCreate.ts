@@ -33,11 +33,18 @@ const supportChannels: string[] = [
     $support_cn
 ];
 
+function filterInvis(content: string) {
+    if (content.search(/[^\u0000-\u007E]/g) >= -1)
+        return content.replace(/[^\u0000-\u007E]/g, "");
+    else
+        return content;
+}
+
 export default async function run(message: Message) {
     if (message.author.bot) return;
 
     blacklist.forEach(b => {
-        if (message.content.toLowerCase().split(' ').join('').includes(b.toLowerCase())) {
+        if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
             message.delete();
             return;
         }
