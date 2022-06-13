@@ -9,6 +9,7 @@ async function run(interaction: CommandInteraction) {
     const password = config.support_password_hash; // You're hopeless if you checked here for the password.
     const hash = crypto.createHash('md5');
     const input = interaction.options.getString('password', true);
+    const hashedInput = hash.update(input).digest('hex');
     const verifiedRole = (interaction.guild?.roles as RoleManager).cache.get('978201137972912198');
     const hasVerified = (interaction.member!.roles as GuildMemberRoleManager).cache.some(r => r.name === "Verified");
 
@@ -22,7 +23,7 @@ async function run(interaction: CommandInteraction) {
         return;
     }
 
-    if (hash.update(input).digest('hex') === password) {
+    if (hashedInput === password) {
         c.trail(`Verified successfully`);
         if (verifiedRole) {
             (interaction.member?.roles as GuildMemberRoleManager).add(verifiedRole);
@@ -32,7 +33,7 @@ async function run(interaction: CommandInteraction) {
             });
         }
     } else {
-        c.trail(`Incorrect password: ${input}`);
+        c.trail(`Incorrect password: ${input} | ${hashedInput} != ${password}`);
         interaction.reply({
             content: `Incorrect password.`,
             ephemeral: true,
