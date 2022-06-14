@@ -28,7 +28,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
             });
             setTimeout(() => {
                 msg.delete();
-            }, 3000);
+            }, 30000);
         }
     }
 }
