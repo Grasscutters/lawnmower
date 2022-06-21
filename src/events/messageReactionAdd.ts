@@ -1,5 +1,7 @@
 import { Client, Guild, Message, MessageReaction, PartialMessageReaction, PartialUser, User } from "discord.js";
 import Logger from "../util/Logger";
+import config from '../config.json';
+import starboard from "../util/starboard";
 const c = new Logger("messageReactionAdd");
 
 // #general, #general-zh, #general-other, #development, #development-zh, #plugin-dev
@@ -16,6 +18,8 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
         }
     }
 
+    c.trail(`${user.tag || "???"} reacted with ${reaction.emoji}`)
+
     if (!user.bot && !reaction.message.author?.bot) {
         if (!reaction.count) return;
 
@@ -26,10 +30,16 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
                     repliedUser: false
                 },
             });
+            c.log(`User ${user.tag || "???"} reacted with hammer`);
             reaction.message.react('🔨');
             setTimeout(() => {
                 msg.delete();
             }, 30000);
+        }
+
+        if (reaction.emoji.name == "⭐" && reaction.count === config.starboard_threshold && reaction.message.channelId !== "988887511843606598") {
+            // TODO: Check for no self starring
+            starboard(reaction.message as Message);
         }
     }
 }
