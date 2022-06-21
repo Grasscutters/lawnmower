@@ -26,6 +26,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
                     repliedUser: false
                 },
             });
+            reaction.message.react('🔨');
             setTimeout(() => {
                 msg.delete();
             }, 30000);
