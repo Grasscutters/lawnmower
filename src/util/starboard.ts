@@ -7,10 +7,18 @@ import { Message, MessageEmbed, TextChannel } from "discord.js";
 import Logger from "./Logger";
 const c = new Logger("Starboard");
 
+export const PINNED_MESSAGES = new Map<string, Message>();
+
 export default async function starboard(message: Message) {
     c.log(`Sending star to #starboard`);
+    if (PINNED_MESSAGES.has(message.id)) {
+        c.trail(`Message already pinned`);
+        return;
+    }
     c.trail(`${message.content} (${message.id})`);
     c.trail(`By ${message.author.tag || "???"}`);
+
+    PINNED_MESSAGES.set(message.id, message);
 
     const channel = message.client.channels.cache.get("988887511843606598") as TextChannel;
     if (!channel) return;

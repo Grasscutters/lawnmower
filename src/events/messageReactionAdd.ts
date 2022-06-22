@@ -36,9 +36,10 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
                 msg.delete();
             }, 30000);
         }
-
-        if (reaction.emoji.name == "⭐" && reaction.count === config.starboard_threshold && reaction.message.channelId !== "988887511843606598") {
-            // TODO: Check for no self starring
+        if (reaction.emoji.name == "⭐" && reaction.message.channelId !== "988887511843606598") {
+            let reactionCount = reaction.count;
+            if(reaction.message.reactions.cache.get('⭐')!.users.cache.has(reaction.message.author!.id)) reactionCount--;
+            if (reactionCount !== config.starboard_threshold) return;
             starboard(reaction.message as Message);
         }
     }
