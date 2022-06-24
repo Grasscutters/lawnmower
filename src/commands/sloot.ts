@@ -34,6 +34,12 @@ async function run(interaction: CommandInteraction) {
             let data = JSON.stringify(json, null, 2)
             fs.writeFileSync('../db/sloot.json', data)
             interaction.reply({content: 'Added', ephemeral: true})
+            break;
+        default:
+            interaction.reply({
+                content: 'Unknown subcommand',
+                ephemeral: true
+            })
     }
 }
 
