@@ -108,3 +108,4 @@ config.json
 package-lock.json
 # Updates too frequently:
 blacklist.json
+sloot.json
