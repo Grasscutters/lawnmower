@@ -39,7 +39,7 @@ async function run(interaction: CommandInteraction) {
             sloot[key] = value
             
             let data = JSON.stringify(sloot, null, 2)
-            fs.writeFileSync(`${process.cwd()}/src/db/sloot.json`, data)
+            fs.writeFileSync(`${__dirname}/../db/sloot.json`, data)
             return await interaction.reply({content: 'Added', ephemeral: true});
         default:
             return await interaction.reply({
