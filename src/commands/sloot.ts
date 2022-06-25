@@ -1,7 +1,7 @@
 import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction } from 'discord.js';
 import fs from 'fs'
-const sloot = require('../db/sloot.json');
+import sloot from '../db/sloot.json';
 
 async function run(interaction: CommandInteraction) {
     let list = Object.keys(sloot).join(", ")
