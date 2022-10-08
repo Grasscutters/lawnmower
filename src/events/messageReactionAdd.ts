@@ -25,7 +25,7 @@ export default async function run(reaction: MessageReaction | PartialMessageReac
 
         if (reaction.emoji.name == '🔨' && reaction.count < 2 && WHITELISTED_CHANNELS.includes(Number(reaction.message.channelId)) && !reaction.message.member?.roles.cache.some(r => r.id == '978201137972912198')) {
             const msg = await reaction.message.reply({
-                content: `Please read <#978197435056787597>.`,
+                content: `Please read <#1028327705571238009>.`,
                 allowedMentions: {
                     repliedUser: false
                 },
