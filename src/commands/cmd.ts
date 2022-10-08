@@ -2,7 +2,6 @@ import { SlashCommandBuilder } from '@discordjs/builders';
 import { CommandInteraction, GuildMemberRoleManager, Message } from 'discord.js';
 import vms from '../util/verificationMessages';
 import Logger from '../util/Logger';
-import starboard from '../util/starboard';
 const c = new Logger('/default');
 
 async function run(interaction: CommandInteraction) {

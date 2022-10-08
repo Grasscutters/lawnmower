@@ -14,7 +14,7 @@ export default async function run(interaction: CommandInteraction, specify?: str
             .setFooter({
                 text: new Date().toLocaleString()
             });
-        (interaction.client.channels.cache.get('978197435056787597') as TextChannel).send({
+        (interaction.client.channels.cache.get('1028327705571238009') as TextChannel).send({
             embeds: [embed],
             content: '** **'
         });

@@ -32,7 +32,7 @@ client.on('interactionCreate', async (interaction) => {
         await cmd.default.process(interaction);
     }).catch(async (error) => {
         c.error(error as unknown as Error);
-        import('./commands/default').then(async (cmd) => {
+        import('./commands/cmd').then(async (cmd) => {
             await cmd.default.process(interaction);
         });
     });

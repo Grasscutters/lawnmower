@@ -31,7 +31,7 @@
     },
     {
         "lang_code": "us",
-        "title": "Welcome to Grasscutter Support!",
-        "content": "To access the channels, you'll need to confirm that you've read the wiki or other documentation to fix your issue.\n\nTo use Grasscutter, you will need some tech savvy knowledge. If you're not familiar with terms like `proxy` or `port forwarding` it's best for you to join a server in #experimental-servers instead.\n\nIf you do understand these terms, verify in bot-commands by using the `/verify <password>` command. The password is hidden in the wiki.\n\nIf you have any issues verifying, please contact a moderator."
+        "title": "Welcome to Grasscutter!",
+        "content": "To access other channels than support channels, please verify yourself by using the `/verify <password>` command. The password is hidden in the wiki.\n\nIf you have any issues verifying, please contact a moderator."
     }
 ]
