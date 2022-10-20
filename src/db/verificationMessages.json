@@ -43,5 +43,10 @@
         "lang_code": "us",
         "title": "Welcome to Grasscutter!",
         "content": "To access other channels than support channels, please verify yourself by using the `/verify <password>` command. The password is hidden in the wiki.\n\nIf you have any issues verifying, please contact a moderator."
+    },
+    {
+        "lang_code": "ko",
+        "title": "Grasscutter에 오신것을 환영합니다!",
+        "content": "support 채널을 제외한 다른 채널에 접근하시려면, `/verify <비밀번호` 명령어를 사용하여 인증하세요. 비밀번호는 위키에 숨겨져 있습니다.\n\n만약 인증하는 데 문제가 있다면, 모더레이터에게 연락해주세요."
     }
 ]
