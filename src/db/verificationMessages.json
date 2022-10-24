@@ -11,8 +11,8 @@
     },
     {
         "lang_code": "ro",
-        "title": "Bine ati venit in Grasscutter!",
-        "content": "Ca sa puteti accesa si alte canale inafara de cele de suport, va rugam sa va verificati folosind comanda  `/verify <password>` . Parola este ascunsa in wiki.\n\nDaca aveti probleme in procesul de verificare, va rugam sa contacti un administrator"
+        "title": "Bine ati venit la Grasscutter!",
+        "content": "Ca sa puteti accesa si alte canale inafara de cele de suport, va rugam sa va verificati folosind comanda  `/verify <parola>` . Parola este ascunsa in wiki.\n\nDaca aveti probleme in procesul de verificare, va rugam sa contactati un moderator."
     },
     {
         "lang_code": "fr",
