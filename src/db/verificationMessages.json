@@ -12,7 +12,7 @@
     {
         "lang_code": "ge",
         "title": "მობრძანდით Grasscutter-ში!",
-        "content": "თუ გინდათ რომ support-ის გარდა სხვა არხები ნახოთ, გთხოვთ გადაამოწმეთ საკუთარი თავი /verify <password> ბრძანებით. პაროლი არის დამალული ვიკიში.\n\nთუ გაქვთ პრობლემები გადამოწმებაში, გთხოვთ ადმინისტრატორს დაუკავშირდით."
+        "content": "თუ გინდათ რომ support-ის გარდა სხვა არხები ნახოთ, გთხოვთ გადაამოწმეთ საკუთარი თავი `/verify <password>` ბრძანებით. პაროლი არის დამალული ვიკიში.\n\nთუ გაქვთ პრობლემები გადამოწმებაში, გთხოვთ ადმინისტრატორს დაუკავშირდით."
     },
     {
         "lang_code": "ro",
@@ -27,17 +27,17 @@
     {
         "lang_code": "pl",
         "title": "Witamy w Grasscutter!",
-        "content": "Aby otrzymać dostęp do innych kanałów niż support, proszę zweryfikować się za pomocą komendy  /verify <hasło>. Hasło jest ukryte gdzieś w wiki.\n\nJeśli masz problem z weryfikacją, proszę skontaktować się z moderatorem."
+        "content": "Aby otrzymać dostęp do innych kanałów niż support, proszę zweryfikować się za pomocą komendy  `/verify <hasło>`. Hasło jest ukryte gdzieś w wiki.\n\nJeśli masz problem z weryfikacją, proszę skontaktować się z moderatorem."
     },
     {
         "lang_code": "it",
         "title": "Benvenuto in  Grasscutter!",
-        "content": "Per accedere ad altri canali oltre a quelli di supporto, ti preghiamo di verificarti usando il comando /verify <password> . La password è nascosta nella Wiki .\n\n se riscontri qualsiasi problema durante la verifica ti preghiamo di contattare un moderatore."
+        "content": "Per accedere ad altri canali oltre a quelli di supporto, ti preghiamo di verificarti usando il comando `/verify <password>` . La password è nascosta nella Wiki .\n\n se riscontri qualsiasi problema durante la verifica ti preghiamo di contattare un moderatore."
     },
     {
         "lang_code": "de",
         "title": "Willkommen bei Grasscutter!",
-        "content": "Um Zugriff auf andere Kanäle als nur support Kanäle zu bekommen, verifiziere dich bitte indem du den  /verify <passwort> Befehl benutzt. Das Passwort ist in der wiki versteckt.\n\nSolltest du Probleme beim verifizieren haben, bitte kontaktiere einen Moderator."
+        "content": "Um Zugriff auf andere Kanäle als nur support Kanäle zu bekommen, verifiziere dich bitte indem du den  `/verify <passwort>` Befehl benutzt. Das Passwort ist in der wiki versteckt.\n\nSolltest du Probleme beim verifizieren haben, bitte kontaktiere einen Moderator."
     },
     {
         "lang_code": "fr",
@@ -52,12 +52,12 @@
     {
         "lang_code": "vn",
         "title": "Chào mừng bạn đã đến với Grasscutter!",
-        "content": "Để có thể truy cập các kênh khác ngoài các kênh dành cho support, hãy xác minh bản thân bạn bằng cách sử dụng lệnh /verify <password>. Mật khẩu được ẩn giấu ở trong Wiki.\n\nNếu bạn có vấn đề gì liên quan tới phần xác minh, vui lòng liên hệ quản trị viên để có thể nhận sự trợ giúp."
+        "content": "Để có thể truy cập các kênh khác ngoài các kênh dành cho support, hãy xác minh bản thân bạn bằng cách sử dụng lệnh `/verify <password>`. Mật khẩu được ẩn giấu ở trong Wiki.\n\nNếu bạn có vấn đề gì liên quan tới phần xác minh, vui lòng liên hệ quản trị viên để có thể nhận sự trợ giúp."
     },
     {
         "lang_code": "ua",
         "title": "Ласкаво просимо до Grasscutter!",
-        "content": "Щоб отримати доступ до інших каналів, окрім каналів підтримки, будь ласка, авторизуйтесь за допомогою команди /verify <пароль>. Пароль приховано у вікі.\n\nЯкщо у вас виникли проблеми з верифікацією, будь ласка, зверніться до модератора."
+        "content": "Щоб отримати доступ до інших каналів, окрім каналів підтримки, будь ласка, авторизуйтесь за допомогою команди `/verify <пароль>`. Пароль приховано у вікі.\n\nЯкщо у вас виникли проблеми з верифікацією, будь ласка, зверніться до модератора."
     },
     {
         "lang_code": "br",
