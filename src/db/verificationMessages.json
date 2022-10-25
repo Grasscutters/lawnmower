@@ -10,7 +10,7 @@
         "content": "Destek kanalları dışındaki kanallara erişmek için, Lütfen `/verify <şifre>` komutunu kullanarak kendinizi doğrulayın. Şifre Wiki'de gizli.\n\nEğer doğrulama hakkında herhangi bir sorununuz varsa, lütfen bir moderatöre ulaşın ."
     },
     {
-        "lang_code": "ka",
+        "lang_code": "ge",
         "title": "მობრძანდით Grasscutter-ში!",
         "content": "თუ გინდათ რომ support-ის გარდა სხვა არხები ნახოთ, გთხოვთ გადაამოწმეთ საკუთარი თავი /verify <password> ბრძანებით. პაროლი არის დამალული ვიკიში.\n\nთუ გაქვთ პრობლემები გადამოწმებაში, გთხოვთ ადმინისტრატორს დაუკავშირდით."
     },
