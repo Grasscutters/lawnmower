@@ -41,7 +41,7 @@ client.on('interactionCreate', async (interaction) => {
         if (interaction.customId === 'verification-modal') {
             verify(interaction);
         }
-    }
+    } else return;
 });
 
 client.on('messageCreate', async (message) => {
