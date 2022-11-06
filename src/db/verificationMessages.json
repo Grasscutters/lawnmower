@@ -2,81 +2,81 @@
     {
         "lang_code": "lt",
         "title": "Sveiki atvyke į Grasscutter!",
-        "content": "Kad pasiekti kitus kanalus, neįskaitant pagalbos kanalus, prašome patvirtinti save naudojant `/verify <password>` komandą. Slaptažodis yra paslpėptas wiki. \n\nJei turite problemų patvirtiname, prašome susisiekti su moderatoriumi"
+        "content": "Kad pasiekti kitus kanalus, neįskaitant pagalbos kanalus, prašome patvirtinti save naudojant `/verify` komandą. Slaptažodis yra paslpėptas wiki. \n\nJei turite problemų patvirtiname, prašome susisiekti su moderatoriumi"
     },
     {
         "lang_code": "tr",
         "title": "Grasscutter'a hoşgeldin!",
-        "content": "Destek kanalları dışındaki kanallara erişmek için, Lütfen `/verify <şifre>` komutunu kullanarak kendinizi doğrulayın. Şifre Wiki'de gizli.\n\nEğer doğrulama hakkında herhangi bir sorununuz varsa, lütfen bir moderatöre ulaşın ."
+        "content": "Destek kanalları dışındaki kanallara erişmek için, Lütfen `/verify` komutunu kullanarak kendinizi doğrulayın. Şifre Wiki'de gizli.\n\nEğer doğrulama hakkında herhangi bir sorununuz varsa, lütfen bir moderatöre ulaşın ."
     },
     {
         "lang_code": "ge",
         "title": "მობრძანდით Grasscutter-ში!",
-        "content": "თუ გინდათ რომ support-ის გარდა სხვა არხები ნახოთ, გთხოვთ გადაამოწმეთ საკუთარი თავი `/verify <password>` ბრძანებით. პაროლი არის დამალული ვიკიში.\n\nთუ გაქვთ პრობლემები გადამოწმებაში, გთხოვთ ადმინისტრატორს დაუკავშირდით."
+        "content": "თუ გინდათ რომ support-ის გარდა სხვა არხები ნახოთ, გთხოვთ გადაამოწმეთ საკუთარი თავი `/verify` ბრძანებით. პაროლი არის დამალული ვიკიში.\n\nთუ გაქვთ პრობლემები გადამოწმებაში, გთხოვთ ადმინისტრატორს დაუკავშირდით."
     },
     {
         "lang_code": "ro",
         "title": "Bine ati venit la Grasscutter!",
-        "content": "Ca sa puteti accesa si alte canale inafara de cele de suport, va rugam sa va verificati folosind comanda `/verify <parola>` . Parola este ascunsa in wiki.\n\nDaca aveti probleme in procesul de verificare, va rugam sa contactati un moderator."
+        "content": "Ca sa puteti accesa si alte canale inafara de cele de suport, va rugam sa va verificati folosind comanda `/verify` . Parola este ascunsa in wiki.\n\nDaca aveti probleme in procesul de verificare, va rugam sa contactati un moderator."
     },
     {
         "lang_code": "kr",
         "title": "Grasscutter에 오신것을 환영합니다!",
-        "content": "support 채널을 제외한 다른 채널에 접근하시려면, `/verify <비밀번호` 명령어를 사용하여 인증하세요. 비밀번호는 위키에 숨겨져 있습니다.\n\n만약 인증하는 데 문제가 있다면, 모더레이터에게 연락해주세요."
+        "content": "support 채널을 제외한 다른 채널에 접근하시려면, `/verify` 명령어를 사용하여 인증하세요. 비밀번호는 위키에 숨겨져 있습니다.\n\n만약 인증하는 데 문제가 있다면, 모더레이터에게 연락해주세요."
     },
     {
         "lang_code": "pl",
         "title": "Witamy w Grasscutter!",
-        "content": "Aby otrzymać dostęp do innych kanałów niż support, proszę zweryfikować się za pomocą komendy  `/verify <hasło>`. Hasło jest ukryte gdzieś w wiki.\n\nJeśli masz problem z weryfikacją, proszę skontaktować się z moderatorem."
+        "content": "Aby otrzymać dostęp do innych kanałów niż support, proszę zweryfikować się za pomocą komendy  `/verify`. Hasło jest ukryte gdzieś w wiki.\n\nJeśli masz problem z weryfikacją, proszę skontaktować się z moderatorem."
     },
     {
         "lang_code": "it",
         "title": "Benvenuto in  Grasscutter!",
-        "content": "Per accedere ad altri canali oltre a quelli di supporto, ti preghiamo di verificarti usando il comando `/verify <password>` . La password è nascosta nella Wiki .\n\n se riscontri qualsiasi problema durante la verifica ti preghiamo di contattare un moderatore."
+        "content": "Per accedere ad altri canali oltre a quelli di supporto, ti preghiamo di verificarti usando il comando `/verify` . La password è nascosta nella Wiki .\n\n se riscontri qualsiasi problema durante la verifica ti preghiamo di contattare un moderatore."
     },
     {
         "lang_code": "de",
         "title": "Willkommen bei Grasscutter!",
-        "content": "Um Zugriff auf andere Kanäle als nur support Kanäle zu bekommen, verifiziere dich bitte indem du den  `/verify <passwort>` Befehl benutzt. Das Passwort ist in der wiki versteckt.\n\nSolltest du Probleme beim verifizieren haben, bitte kontaktiere einen Moderator."
+        "content": "Um Zugriff auf andere Kanäle als nur support Kanäle zu bekommen, verifiziere dich bitte indem du den  `/verify` Befehl benutzt. Das Passwort ist in der wiki versteckt.\n\nSolltest du Probleme beim verifizieren haben, bitte kontaktiere einen Moderator."
     },
     {
         "lang_code": "fr",
         "title": "Bienvenue dans Grasscutter!",
-        "content": "Pour accéder aux salons autre que ceux de support, veuillez vous vérifier en utilisant la commande `/verify <mot_de_passe>`. Le mot de passe est caché dans le wiki.\n\n Si vous avez des problèmes avec la vérification, veuillez contacter un modérateur."
+        "content": "Pour accéder aux salons autre que ceux de support, veuillez vous vérifier en utilisant la commande `/verify`. Le mot de passe est caché dans le wiki.\n\n Si vous avez des problèmes avec la vérification, veuillez contacter un modérateur."
     },
     {
         "lang_code": "es",
         "title": "Bienvenido a Grasscutter!",
-        "content": "Para acceder a otros canales que no sean canales de suporte, verificate usando el comando `/verify <password>`. La contraseña está oculta en la wiki.\n\nSi tienes problemas verificandote, contacta con un moderador."
+        "content": "Para acceder a otros canales que no sean canales de suporte, verificate usando el comando `/verify`. La contraseña está oculta en la wiki.\n\nSi tienes problemas verificandote, contacta con un moderador."
     },
     {
         "lang_code": "vn",
         "title": "Chào mừng bạn đã đến với Grasscutter!",
-        "content": "Để có thể truy cập các kênh khác ngoài các kênh dành cho support, hãy xác minh bản thân bạn bằng cách sử dụng lệnh `/verify <password>`. Mật khẩu được ẩn giấu ở trong Wiki.\n\nNếu bạn có vấn đề gì liên quan tới phần xác minh, vui lòng liên hệ quản trị viên để có thể nhận sự trợ giúp."
+        "content": "Để có thể truy cập các kênh khác ngoài các kênh dành cho support, hãy xác minh bản thân bạn bằng cách sử dụng lệnh `/verify`. Mật khẩu được ẩn giấu ở trong Wiki.\n\nNếu bạn có vấn đề gì liên quan tới phần xác minh, vui lòng liên hệ quản trị viên để có thể nhận sự trợ giúp."
     },
     {
         "lang_code": "ua",
         "title": "Ласкаво просимо до Grasscutter!",
-        "content": "Щоб отримати доступ до інших каналів, окрім каналів підтримки, будь ласка, авторизуйтесь за допомогою команди `/verify <пароль>`. Пароль приховано у вікі.\n\nЯкщо у вас виникли проблеми з верифікацією, будь ласка, зверніться до модератора."
+        "content": "Щоб отримати доступ до інших каналів, окрім каналів підтримки, будь ласка, авторизуйтесь за допомогою команди `/verify`. Пароль приховано у вікі.\n\nЯкщо у вас виникли проблеми з верифікацією, будь ласка, зверніться до модератора."
     },
     {
         "lang_code": "br",
         "title": "Bem-vindo ao Grasscutter!",
-        "content": "Pra acessar outros canais além dos canais de suporte, por favor verifique-se usando o comando `/verify <senha>`. A senha está escondida na wiki.\n\nSe você tiver algum problema ao verificar, contate um moderador. "
+        "content": "Pra acessar outros canais além dos canais de suporte, por favor verifique-se usando o comando `/verify`. A senha está escondida na wiki.\n\nSe você tiver algum problema ao verificar, contate um moderador. "
     },
     {
         "lang_code": "ru",
         "title": "Добро пожаловать в Grasscutter!",
-        "content": "Чтобы получить доступ к другим каналам кроме поддержки, пожалуйста, подтвердите себя используя команду `/verify <пароль>`. Пароль спрятан в вики.\n\nЕсли вы столкнётесь с проблемами во время подтверждения, пожалуйста, свяжитесь с модератором."
+        "content": "Чтобы получить доступ к другим каналам кроме поддержки, пожалуйста, подтвердите себя используя команду `/verify`. Пароль спрятан в вики.\n\nЕсли вы столкнётесь с проблемами во время подтверждения, пожалуйста, свяжитесь с модератором."
     },
     {
         "lang_code": "cn",
         "title": "欢迎来到 Grasscutter!",
-        "content": "要访问支持频道以外的其他频道, 请使用 `/verify <密码>` 命令验证自己。密码隐藏在 wiki 中。如果您在验证时遇到任何问题，请联系版主。"
+        "content": "要访问支持频道以外的其他频道, 请使用 `/verify` 命令验证自己。密码隐藏在 wiki 中。如果您在验证时遇到任何问题，请联系版主。"
     },
     {
         "lang_code": "us",
         "title": "Welcome to Grasscutter!",
-        "content": "To access other channels than support channels, please verify yourself by using the `/verify <password>` command. The password is hidden in the wiki.\n\nIf you have any issues verifying, please contact a moderator."
+        "content": "To access other channels than support channels, please verify yourself by using the `/verify` command. The password is hidden in the wiki.\n\nIf you have any issues verifying, please contact a moderator."
     }
 ]
