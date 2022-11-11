@@ -52,7 +52,7 @@ Available substats:`,
 }
 
 function arrayToChoices(array: string[]): [name: string, value: string][] {
-    return array.map(str => [str, str]);
+    return array.map(str => [str.toLowerCase(), str.toLowerCase()]);
 }
 
 function getSubstatKeys(): string[] {
@@ -111,7 +111,7 @@ const cmd = new SlashCommandBuilder()
     .addSubcommand(subcommand => subcommand.setName('generate').setDescription('Generates an artifact command.')
         .addStringOption(id => id.setName('id').setRequired(true).setDescription('The artifact ID'))
         .addNumberOption(level => level.setName('level').setRequired(true).setDescription('The level of the artifact'))
-        .addStringOption(mainStat => mainStat.setName('mainstat').setRequired(true).setDescription('The main stat').addChoices(arrayToChoices(artifact.mainStatList)))
+        .addStringOption(mainStat => mainStat.setName('mainstat').setRequired(true).setDescription('The main stat'))
         .addStringOption(uid => uid.setName('uid').setRequired(false).setDescription('The players UID'))
         .addStringOption(subStats => subStats.setName('substats').setRequired(false).setDescription('Sub stats separated by a comma. Place a ! after an ID to level it up'))
     )
