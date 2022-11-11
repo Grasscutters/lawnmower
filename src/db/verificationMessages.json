@@ -1,13 +1,18 @@
 [
     {
+        "lang_code": "ph",
+        "title": "Maligayang pagdating sa Grasscutter!",
+        "content": "Upang ma-access ang iba pang mga channel kaysa sa mga channel ng suporta, mangyaring i-verify ang iyong sarili sa pamamagitan ng paggamit ng `/verify <password>` command. Ang password ay nakatago sa wiki. \n\nKung mayroon kang anumang mga isyu sa pag-verify, mangyaring makipag-ugnayan sa isang moderator."
+    },
+    {
         "lang_code": "lt",
         "title": "Sveiki atvyke į Grasscutter!",
-        "content": "Kad pasiekti kitus kanalus, neįskaitant pagalbos kanalus, prašome patvirtinti save naudojant `/verify <password>` komandą. Slaptažodis yra paslpėptas wiki. \n\nJei turite problemų patvirtiname, prašome susisiekti su moderatoriumi"
+        "content": "Kad pasiekti kitus kanalus, neįskaitant pagalbos kanalus, prašome patvirtinti save naudojant `/verify <password>` komandą. Slaptažodis yra paslpėptas wiki. \n\nJei turite problemų patvirtiname, prašome susisiekti su moderatoriumi."
     },
     {
         "lang_code": "tr",
         "title": "Grasscutter'a hoşgeldin!",
-        "content": "Destek kanalları dışındaki kanallara erişmek için, Lütfen `/verify <şifre>` komutunu kullanarak kendinizi doğrulayın. Şifre Wiki'de gizli.\n\nEğer doğrulama hakkında herhangi bir sorununuz varsa, lütfen bir moderatöre ulaşın ."
+        "content": "Destek kanalları dışındaki kanallara erişmek için, Lütfen `/verify <şifre>` komutunu kullanarak kendinizi doğrulayın. Şifre Wiki'de gizli.\n\nEğer doğrulama hakkında herhangi bir sorununuz varsa, lütfen bir moderatöre ulaşın."
     },
     {
         "lang_code": "ge",
