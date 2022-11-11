@@ -4,6 +4,7 @@ import getConfig from './util/config';
 import register from './util/registercommands';
 import getEvents, { findEvent } from './events/eventHandler';
 import verify from './events/modalSubmit';
+import verifyInit from './events/button';
 import { Routes } from 'discord-api-types/v10';
 import Logger from './util/Logger';
 const c = new Logger('Lawnmower');
@@ -41,7 +42,11 @@ client.on('interactionCreate', async (interaction) => {
         if (interaction.customId === 'verification-modal') {
             verify(interaction);
         }
-    } else return;
+    } else if(interaction.isButton()) {
+        if(interaction.customId === 'verification-button') {
+            verifyInit(interaction);
+        }
+    }
 });
 
 client.on('messageCreate', async (message) => {

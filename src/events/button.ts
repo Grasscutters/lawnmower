@@ -1,10 +1,9 @@
-import { SlashCommandBuilder } from '@discordjs/builders';
-import { CommandInteraction, GuildMemberRoleManager, RoleManager } from 'discord.js';
-import Logger from '../util/Logger';
+import { ButtonInteraction, GuildMemberRoleManager } from "discord.js";
 import verificationModal from '../util/verificationModal';
-const c = new Logger('/verify');
+import Logger from '../util/Logger';
+const c = new Logger('verification');
 
-async function run(interaction: CommandInteraction) {
+export default async function run(interaction: ButtonInteraction) {
     const hasVerified = (interaction.member!.roles as GuildMemberRoleManager).cache.some(r => r.name === "Verified");
 
     c.log(`User ${interaction.member?.user.username || "???"}#${interaction.member?.user.discriminator || "0000"} is verifying`);
@@ -18,14 +17,4 @@ async function run(interaction: CommandInteraction) {
     }
 
     interaction.showModal(verificationModal);
-}
-
-const cmd = new SlashCommandBuilder()
-    .setName('verify')
-    .setDescription('Access the support channels')
-
-let _;
-export default _ = {
-    process: run,
-    command: cmd
 }

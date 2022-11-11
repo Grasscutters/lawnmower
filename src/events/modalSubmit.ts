@@ -1,4 +1,4 @@
-import { ModalSubmitInteraction, RoleManager, GuildMemberRoleManager } from "discord.js"; 'discord.js';
+import { ModalSubmitInteraction, RoleManager, GuildMemberRoleManager } from "discord.js";
 import crypto from 'crypto';
 import config from '../config.json';
 import Logger from '../util/Logger';
