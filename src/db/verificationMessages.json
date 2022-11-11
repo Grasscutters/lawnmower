@@ -70,6 +70,11 @@
         "content": "Pra acessar outros canais além dos canais de suporte, por favor verifique-se usando o comando `/verify <senha>`. A senha está escondida na wiki.\n\nSe você tiver algum problema ao verificar, contate um moderador. "
     },
     {
+        "lang_code": "jp",
+        "title": "Grasscutterへようこそ！",
+        "content": "サポートチャンネル以外のチャンネルにアクセスするためには、 `/verify <password>` コマンドを使って認証をしてください。パスワードはウィキの中に隠されています。\n\nもし認証に問題が発生したら、モデレーターに連絡してください。"
+    },
+    {
         "lang_code": "ru",
         "title": "Добро пожаловать в Grasscutter!",
         "content": "Чтобы получить доступ к другим каналам кроме поддержки, пожалуйста, подтвердите себя используя команду `/verify <пароль>`. Пароль спрятан в вики.\n\nЕсли вы столкнётесь с проблемами во время подтверждения, пожалуйста, свяжитесь с модератором."
