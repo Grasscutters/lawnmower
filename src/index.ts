@@ -3,6 +3,8 @@ import { Client, Guild, Intents } from 'discord.js';
 import getConfig from './util/config';
 import register from './util/registercommands';
 import getEvents, { findEvent } from './events/eventHandler';
+import verify from './events/modalSubmit';
+import verifyInit from './events/button';
 import { Routes } from 'discord-api-types/v10';
 import Logger from './util/Logger';
 const c = new Logger('Lawnmower');
@@ -26,16 +28,25 @@ async function registerEvent(event: string, ...args: any) {
 }
 
 client.on('interactionCreate', async (interaction) => {
-    if (!interaction.isCommand()) return;
-    ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
-    import(`./commands/${interaction.commandName}`).then(async (cmd) => {
-        await cmd.default.process(interaction);
-    }).catch(async (error) => {
-        c.error(error as unknown as Error);
-        import('./commands/cmd').then(async (cmd) => {
+    if (interaction.isCommand()) {
+        ci.log(`/${interaction.commandName} was called by ${interaction.user.username}#${interaction.user.discriminator}`);
+        import(`./commands/${interaction.commandName}`).then(async (cmd) => {
             await cmd.default.process(interaction);
+        }).catch(async (error) => {
+            c.error(error as unknown as Error);
+            import('./commands/cmd').then(async (cmd) => {
+                await cmd.default.process(interaction);
+            });
         });
-    });
+    } else if (interaction.isModalSubmit()) {
+        if (interaction.customId === 'verification-modal') {
+            verify(interaction);
+        }
+    } else if(interaction.isButton()) {
+        if(interaction.customId === 'verification-button') {
+            verifyInit(interaction);
+        }
+    }
 });
 
 client.on('messageCreate', async (message) => {
