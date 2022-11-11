@@ -23,7 +23,7 @@ export default async function run(interaction: CommandInteraction, specify?: str
                 text: new Date().toLocaleString()
             });
 
-        (interaction.client.channels.cache.get('970054253525733386') as TextChannel).send({
+        (interaction.client.channels.cache.get('1028327705571238009') as TextChannel).send({
             embeds: [embed],
             content: '** **',
             components: (idx == arr.length - 1) ? [verificationRow] : []
