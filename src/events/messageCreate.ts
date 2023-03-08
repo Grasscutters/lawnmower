@@ -26,7 +26,7 @@ source.forEach(s => {
     actionList.push({ action: s.action, keywords: s.keywords, action_cn: s.action_cn });
 });
 
-const $support = '978314904220106832';
+const $support = '1019987283593674883';
 const $support_cn = '967477370997076079';
 const supportChannels: string[] = [
     $support,
@@ -55,7 +55,7 @@ export default async function run(message: Message) {
     });
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
-    if (!supportChannels.includes(message.channel.id)) return;
+    if (!supportChannels.includes(message.channel.parentId)) return;
 
     regexList.forEach(async regex => {
         if (regex.test(message.content)) {
