@@ -110,5 +110,9 @@
         "keywords": ["Conv inconsistency"],
         "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect",
         "action_cn": "这个错误通常在你有活跃的客户端连接着服务端的同时重启了服务端所导致，服务端接收的包错误的原因是无法识别会话，这个错误会在客户端尝试重新连接后消失。"
+    },
+    {
+        "keywords": ["4214"],
+        "action": "You haven't patched your game correctly. Check https://discord.com/channels/965284035985305680/1025543438604710018/1070271483064102912 for more information."
     }
 ]
