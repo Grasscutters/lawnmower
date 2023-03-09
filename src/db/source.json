@@ -120,7 +120,7 @@
         "action": "You must disable encryption in your Cultivation settings and restart your server. Refer to https://discord.com/channels/965284035985305680/1020898384317513738/1020899471871197305 for more information."
     },
     {
-        "keywords":["white screen"],
+        "keywords": ["white screen"],
         "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. Please check https://discord.com/channels/965284035985305680/1025543438604710018/1066651057788293150 for more information."
     }
 ]
