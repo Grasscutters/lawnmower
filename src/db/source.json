@@ -75,7 +75,7 @@
 
     {
         "keywords": ["4206"],
-        "action": "Your device isn't connecting to the server properly. Check your proxy settings (Fiddler, mitm, etc) and try again.",
+        "action": "Your device either isn't connecting to the server properly, or your encryption settings are incorrect. Check https://discord.com/channels/965284035985305680/1083482155243544656/1083524186552664064 for more information.",
         "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, 等)然后重试。"
     },
     
@@ -114,5 +114,13 @@
     {
         "keywords": ["4214"],
         "action": "You haven't patched your game correctly. Check https://discord.com/channels/965284035985305680/1025543438604710018/1070271483064102912 for more information."
+    },
+    {
+        "keywords": ["system error"],
+        "action": "You must disable encryption in your Cultivation settings and restart your server. Refer to https://discord.com/channels/965284035985305680/1020898384317513738/1020899471871197305 for more information."
+    },
+    {
+        "keywords":["white screen"],
+        "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. Please check https://discord.com/channels/965284035985305680/1025543438604710018/1066651057788293150 for more information."
     }
 ]
