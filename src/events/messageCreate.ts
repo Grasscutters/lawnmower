@@ -27,11 +27,6 @@ source.forEach(s => {
 });
 
 const $support = '1019987283593674883';
-const $support_cn = '967477370997076079';
-const supportChannels: string[] = [
-    $support,
-    $support_cn
-];
 
 function filterInvis(content: string) {
     if (content.search(/[^\u0000-\u007E]/g) >= -1)
@@ -55,21 +50,14 @@ export default async function run(message: Message) {
     });
     c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
-    if (!supportChannels.includes(message.channel.parentId)) return;
+    if (message.channel.parentId !== $support) return;
 
     regexList.forEach(async regex => {
         if (regex.test(message.content)) {
             const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
             message.react('👀');
             if (action) {
-                switch (message.channel.id) {
-                    case $support_cn:
-                        if (action.action_cn) message.reply(action.action_cn);
-                        break;
-                    default:
-                        if (action.action) message.reply(action.action);
-                        break;
-                }
+                message.reply(action.action);
                 c.trail(`Match found for ${action.keywords[0]}`)
             }
         }
