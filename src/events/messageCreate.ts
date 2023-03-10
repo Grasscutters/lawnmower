@@ -38,7 +38,7 @@ function filterInvis(content: string) {
 export default async function run(message: Message) {
     if (message.author.bot) return;
 
-    if (message.channelId === "1082829744363548762" && message.deletable) { // #verify
+    if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
         message.delete();
     }
 
