@@ -42,8 +42,8 @@
     
     
     {
-        "keywords": ["MongoSocketOpenException", "Connection refused", "Exception opening socket", "ECONNREFUSED"],
-        "action": "Start `mongod.exe` in `C:\\Program Files\\MongoDB\\Server\\<version>\\bin`",
+        "keywords": ["MongoTimeoutException", "MongoSocketOpenException", "Connection refused", "Exception opening socket", "ECONNREFUSED"],
+        "action": "Open the start menu (either click the icon or press the Windows key), type services into the Windows search bar and open the Services app, find the MongoDB service and press the button to start it. If you cannot find it in your service list, you must download MongoDB from <https://www.mongodb.com/try/download/community>. MongoDB Compass is not related to or required for this, but it is recommended to install MongoDB Compass so that you can fix any database-related issues if your game breaks.",
         "action_cn": "启动在目录`C:\\Program Files\\MongoDB\\Server\\<version>\\bin`中的 `mongod.exe`"
     },
     
