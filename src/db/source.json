@@ -113,7 +113,7 @@
     },
     {
         "keywords": ["4214"],
-        "action": "You haven't patched your game correctly. Check https://discord.com/channels/965284035985305680/1025543438604710018/1070271483064102912 for more information."
+        "action": "You haven't patched your game correctly. Check https://discord.com/channels/965284035985305680/1025543438604710018/1083930451837718579 for more information."
     },
     {
         "keywords": ["system error"],
@@ -121,6 +121,6 @@
     },
     {
         "keywords": ["white screen"],
-        "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. Please check https://discord.com/channels/965284035985305680/1025543438604710018/1066651057788293150 for more information."
+        "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. Please check https://discord.com/channels/965284035985305680/1025543438604710018/1081338176540528752 for more information."
     }
 ]
