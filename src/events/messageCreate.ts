@@ -1,8 +1,7 @@
 import source from '../db/source.json';
 import blacklist from '../db/blacklist.json';
 import Logger from '../util/Logger';
-import { Message } from "discord.js";
-import sendToLog from '../util/sendToLog';
+import { Message, ThreadChannel } from "discord.js";
 const c = new Logger('messageCreate');
 
 function buildSearch(substrings: string[]) {
@@ -36,30 +35,34 @@ function filterInvis(content: string) {
 }
 
 export default async function run(message: Message) {
-    if (message.author.bot) return;
+    try {
+        if (message.author.bot) return;
 
-    if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
-        message.delete();
-    }
-
-    blacklist.forEach(b => {
-        if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
+        if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
             message.delete();
-            return;
         }
-    });
-    c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
-    if (message.channel.parentId !== $support) return;
-
-    regexList.forEach(async regex => {
-        if (regex.test(message.content)) {
-            const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
-            message.react('👀');
-            if (action) {
-                message.reply(action.action);
-                c.trail(`Match found for ${action.keywords[0]}`)
+        blacklist.forEach(b => {
+            if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
+                message.delete();
             }
-        }
-    });
+        });
+
+        c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
+
+        if ((<ThreadChannel>message.channel).parentId !== $support) return;
+
+        regexList.forEach(async regex => {
+            if (regex.test(message.content)) { // TODO: Check message.thread.name
+                const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
+                message.react('👀');
+                if (action && action.action) {
+                    message.reply(action.action);
+                    c.trail(`Match found for ${action.keywords[0]}`)
+                }
+            }
+        });
+    } catch(e) {
+        console.error(e);
+    }
 }
