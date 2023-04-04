@@ -1,5 +1,5 @@
 import { REST } from '@discordjs/rest';
-import { Client, Guild, Intents } from 'discord.js';
+import { Client, Partials } from 'discord.js';
 import getConfig from './util/config';
 import register from './util/registercommands';
 import getEvents, { findEvent } from './events/eventHandler';
@@ -12,8 +12,8 @@ const ci = new Logger('Command', 'blue');
 const ce = new Logger('Event', 'yellow');
 
 const client = new Client({
-    intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_MEMBERS],
-    partials: ['MESSAGE', 'CHANNEL', 'REACTION']
+    intents: ["Guilds", "GuildMessages", "GuildMessageReactions", "GuildMembers", "MessageContent"],
+    partials: [Partials.Message, Partials.Channel, Partials.Reaction]
 });
 
 client.on('ready', () => {

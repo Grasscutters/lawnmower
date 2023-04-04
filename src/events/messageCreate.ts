@@ -1,8 +1,7 @@
 import source from '../db/source.json';
 import blacklist from '../db/blacklist.json';
 import Logger from '../util/Logger';
-import { Message } from "discord.js";
-import sendToLog from '../util/sendToLog';
+import { Message, ThreadChannel } from "discord.js";
 const c = new Logger('messageCreate');
 
 function buildSearch(substrings: string[]) {
@@ -46,19 +45,18 @@ export default async function run(message: Message) {
         blacklist.forEach(b => {
             if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
                 message.delete();
-                return;
             }
         });
 
         c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
-        if (message.channel.parentId !== $support) return;
+        if ((<ThreadChannel>message.channel).parentId !== $support) return;
 
         regexList.forEach(async regex => {
-            if (regex.test(message.content)) {
+            if (regex.test(message.content)) { // TODO: Check message.thread.name
                 const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
                 message.react('👀');
-                if (action) {
+                if (action && action.action) {
                     message.reply(action.action);
                     c.trail(`Match found for ${action.keywords[0]}`)
                 }

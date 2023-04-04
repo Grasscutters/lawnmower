@@ -1,21 +1,21 @@
-import { CommandInteraction, MessageEmbed, TextChannel, MessageActionRow, MessageButton } from 'discord.js';
+import { CommandInteraction, EmbedBuilder, TextChannel, ActionRowBuilder, ButtonBuilder, ButtonStyle } from 'discord.js';
 import vm from '../db/verificationMessages.json';
 import Logger from './Logger';
 const c = new Logger(`verificationMessages`);
 
-const verificationRow = new MessageActionRow()
+const verificationRow = new ActionRowBuilder<ButtonBuilder>()
     .addComponents(
-        new MessageButton()
+        new ButtonBuilder()
             .setCustomId('verification-button')
             .setLabel('Verify')
-            .setStyle('SUCCESS')
+            .setStyle(ButtonStyle.Success)
     );
 
 export default async function run(interaction: CommandInteraction, specify?: string) {
     vm.forEach((v, idx, arr) => {
         if (specify && v.lang_code != specify) return;
 
-        const embed = new MessageEmbed();
+        const embed = new EmbedBuilder();
         embed.setTitle(`:flag_${v.lang_code}: **${v.title}**`)
             .setDescription(v.content)
             .setColor('#7289da')

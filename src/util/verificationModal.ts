@@ -1,16 +1,17 @@
-import { MessageActionRow, Modal, TextInputComponent } from 'discord.js';
+import { ModalBuilder, TextInputBuilder, ActionRowBuilder, TextInputStyle } from 'discord.js';
 
-const modal = new Modal()
+const modal = new ModalBuilder()
     .setCustomId('verification-modal')
     .setTitle('Verify')
 
-const passwordInput = new TextInputComponent()
+const passwordInput = new TextInputBuilder()
     .setCustomId('password-input')
     .setLabel('Password')
     .setPlaceholder('Enter your password')
-    .setStyle('SHORT')
+    .setStyle(TextInputStyle.Short)
 
-const row = new MessageActionRow<TextInputComponent>().addComponents(passwordInput)
-modal.addComponents(row)
+const row = new ActionRowBuilder<TextInputBuilder>().addComponents(passwordInput);
+
+modal.addComponents(row);
 
 export default modal;
