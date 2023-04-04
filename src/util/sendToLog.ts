@@ -3,11 +3,11 @@
  * @description Send an embed to #message-logs
 */
 
-import { Client, ColorResolvable, MessageAttachment, TextChannel, User } from "discord.js";
+import { Client, ColorResolvable, Attachment, TextChannel, User } from "discord.js";
 import Logger from "./Logger";
 const c = new Logger("sendToLog");
 
-export default async function sendToLog(title: string, description: string, color: ColorResolvable, user: User | null, client: Client, attachments?: MessageAttachment[]) {
+export default async function sendToLog(title: string, description: string, color: ColorResolvable, user: User | null, client: Client, attachments?: Attachment[]) {
     c.log(`Sending embed to #message-logs`);
     c.trail(title);
     c.trail(description);
