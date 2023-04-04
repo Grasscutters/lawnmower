@@ -36,30 +36,35 @@ function filterInvis(content: string) {
 }
 
 export default async function run(message: Message) {
-    if (message.author.bot) return;
+    try {
+        if (message.author.bot) return;
 
-    if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
-        message.delete();
-    }
-
-    blacklist.forEach(b => {
-        if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
+        if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
             message.delete();
-            return;
         }
-    });
-    c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
 
-    if (message.channel.parentId !== $support) return;
-
-    regexList.forEach(async regex => {
-        if (regex.test(message.content)) {
-            const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
-            message.react('👀');
-            if (action) {
-                message.reply(action.action);
-                c.trail(`Match found for ${action.keywords[0]}`)
+        blacklist.forEach(b => {
+            if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
+                message.delete();
+                return;
             }
-        }
-    });
+        });
+
+        c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
+
+        if (message.channel.parentId !== $support) return;
+
+        regexList.forEach(async regex => {
+            if (regex.test(message.content)) {
+                const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
+                message.react('👀');
+                if (action) {
+                    message.reply(action.action);
+                    c.trail(`Match found for ${action.keywords[0]}`)
+                }
+            }
+        });
+    } catch(e) {
+        console.error(e);
+    }
 }
