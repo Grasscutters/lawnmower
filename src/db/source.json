@@ -1,126 +1,159 @@
 [
-    {
-        "keywords": ["Address already in use", "java.net.BindException"],
-        "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`",
-        "action_cn": "检查是否有其他程序占用了这些端口: `8888, 443, 80, 22102`. 看起来这些占用端口的程序程序阻止了你的程序启动. \n 执行 `netstat -aon | find /i \"listening\"` 来查看占用端口的程序，然后通过执行`taskkill /PID <PID>`来终结它们"
-    },
-    
-    
-    {
-        "keywords": ["not recognized as an internal or external command"],
-        "action": "You don't have java in your PATH. Make sure you have java installed or add it to PATH manually: https://www.java.com/en/download/help/path.html",
-        "action_cn": "你的PATH路径中并没有java，确保你已经安装了java并且手动将其加入PATH中: https://www.java.com/en/download/help/path.html"
-    },
-    
-    
-    {
-        "keywords": ["unable to access jarfile"],
-        "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly.",
-        "action_cn": "先通过执行命令`gradlew jar`来构建GrassCutter: 确保你的操作都是正确对照着README和Wiki的安装步骤来的"
-    },
-    
-    
-    {
-        "keywords": ["not have permission"],
-        "action": "Enter `/permission add <username> *` in your console",
-        "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`并回车"
-    },
-    
-    
-    {
-        "keywords": ["java.lang.IllegalStateException"],
-        "action": "Your JSON is not valid. Check your ExcelConfigData and try again.",
-        "action_cn": "你的JSON格式不正确，检查你的ExcelConfigData然后重试"
-    },
-    
-    
-    {
-        "keywords": ["JsonSyntaxException", "binoutput issue"],
-        "action": "Use the BinOutput from radioegor146 instead: <https://github.com/Koko-boya/Grasscutter_Resources>",
-        "action_cn": "将BinOutput替换成radioegor146的: <https://github.com/Koko-boya/Grasscutter_Resources>"
-    },
-    
-    
-    {
-        "keywords": ["MongoTimeoutException", "MongoSocketOpenException", "Connection refused", "Exception opening socket", "ECONNREFUSED"],
-        "action": "Open the start menu (either click the icon or press the Windows key), type services into the Windows search bar and open the Services app, find the MongoDB service and press the button to start it. If you cannot find it in your service list, you must download MongoDB from <https://www.mongodb.com/try/download/community>. MongoDB Compass is not related to or required for this, but it is recommended to install MongoDB Compass so that you can fix any database-related issues if your game breaks.",
-        "action_cn": "启动在目录`C:\\Program Files\\MongoDB\\Server\\<version>\\bin`中的 `mongod.exe`"
-    },
-    
-    
-    {
-        "keywords": ["TypeAnnotationsScanner"],
-        "action": "Edit the reflection version in `build.gradle` to: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`",
-        "action_cn": "更改`build.gradle`中的reflection版本为: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`"
-    },
-    
-    
-    {
-        "keywords": ["missing weights"],
-        "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json",
-        "action_cn": "替换resources/ExcelBinOutput目录里的这些文件:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
-    },
-    
-    {
-        "keywords": ["internal server error"],
-        "action": "The feature is probably not yet implemented :pensive:",
-        "action_cn": "该功能可能在目前并没有实现:pensive:"
-    },
-    {
-        "keywords": ["服务器内部错误"],
-        "action": "The feature is probably not yet implemented :pensive:",
-        "action_cn": "该功能可能在目前并没有实现:pensive:"
-    },
+  {
+    "keywords": ["Address already in use", "java.net.BindException"],
+    "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`",
+    "action_cn": "检查是否有其他程序占用了这些端口: `8888, 443, 80, 22102`. 看起来这些占用端口的程序程序阻止了你的程序启动. \n 执行 `netstat -aon | find /i \"listening\"` 来查看占用端口的程序，然后通过执行`taskkill /PID <PID>`来终结它们"
+  },
 
+  {
+    "keywords": ["not recognized as an internal or external command"],
+    "action": "You don't have java in your PATH. Make sure you have java installed or add it to PATH manually: https://www.java.com/en/download/help/path.html",
+    "action_cn": "你的PATH路径中并没有java，确保你已经安装了java并且手动将其加入PATH中: https://www.java.com/en/download/help/path.html"
+  },
 
-    {
-        "keywords": ["4206"],
-        "action": "Your device either isn't connecting to the server properly, or your encryption settings are incorrect. Check https://discord.com/channels/965284035985305680/1083482155243544656/1083524186552664064 for more information.",
-        "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, 等)然后重试。"
-    },
-    
-    {
-        "keywords": ["where can i find ExcelBinOutput", "where can i find BinOutput", "where is ExcelBinOutput", "where is BinOutput", "where can i find the ExcelBinOutput", "where can i find the BinOutput", "where is the ExcelBinOutput", "where is the BinOutput", "where can i download ExcelBinOutput", "where can i download BinOutput"],
-        "action": "You can get them all from here: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
-    },
-    {
-        "keywords": ["ExcelBinOutput在哪里", "BinOutput在哪里", "ExcelBinOutput哪里找", " BinOutput哪里找", "哪里能找到ExcelBinOutput", "哪里能找到BinOutput", "该去哪里找ExcelBinOutput", "该去哪里找BinOutput", "ExcelBinOutput哪里下载", "BinOutput哪里下载","ExcelBinOutput哪里有", "BinOutput哪里有"],
-        "action": "ExcelBinOutput: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
-    },
+  {
+    "keywords": ["unable to access jarfile"],
+    "action": "Build grasscutter first with `gradlew jar`. Make sure to follow the installation instructions in the README/Wiki properly.",
+    "action_cn": "先通过执行命令`gradlew jar`来构建GrassCutter: 确保你的操作都是正确对照着README和Wiki的安装步骤来的"
+  },
 
+  {
+    "keywords": ["not have permission"],
+    "action": "Enter `/permission add <username> *` in your console",
+    "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`并回车"
+  },
 
-    {
-        "keywords": ["item id", "char id", "character id", "artifact id", "reliquary id"],
-        "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
-    },
-    {
-        "keywords": ["物品id", "人物id", "制造品id", "圣遗物id"],
-        "action": "通过执行命令`java -jar grasscutter.jar -handbook`生成\"游戏数据大全\"\n或者\n\n使用Discord命令`/gm <query>`"
-    },
-    
-    {
-        "keywords": ["scene ids"],
-        "action": "You can find them in your ExcelBinOutput folder (SceneExcelConfigData.json)"
-    },
-    {
-        "keywords": ["场景id"],
-        "action": "在ExcelBinOutput目录里你能找到它们 (SceneExcelConfigData.json)"
-    },
-    {
-        "keywords": ["Conv inconsistency"],
-        "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect",
-        "action_cn": "这个错误通常在你有活跃的客户端连接着服务端的同时重启了服务端所导致，服务端接收的包错误的原因是无法识别会话，这个错误会在客户端尝试重新连接后消失。"
-    },
-    {
-        "keywords": ["4214"],
-        "action": "You haven't patched your game correctly. Check https://discord.com/channels/965284035985305680/1025543438604710018/1083930451837718579 for more information."
-    },
-    {
-        "keywords": ["system error"],
-        "action": "You must disable encryption in your Cultivation settings and restart your server. Refer to https://discord.com/channels/965284035985305680/1020898384317513738/1020899471871197305 for more information."
-    },
-    {
-        "keywords": ["white screen"],
-        "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. Please check https://discord.com/channels/965284035985305680/1025543438604710018/1081338176540528752 for more information."
-    }
+  {
+    "keywords": ["java.lang.IllegalStateException"],
+    "action": "Your JSON is not valid. Check your ExcelConfigData and try again.",
+    "action_cn": "你的JSON格式不正确，检查你的ExcelConfigData然后重试"
+  },
+
+  {
+    "keywords": ["JsonSyntaxException", "binoutput issue"],
+    "action": "Use the BinOutput from radioegor146 instead: <https://github.com/Koko-boya/Grasscutter_Resources>",
+    "action_cn": "将BinOutput替换成radioegor146的: <https://github.com/Koko-boya/Grasscutter_Resources>"
+  },
+
+  {
+    "keywords": [
+      "MongoTimeoutException",
+      "MongoSocketOpenException",
+      "Connection refused",
+      "Exception opening socket",
+      "ECONNREFUSED"
+    ],
+    "action": "Enable \"Automatically Start MongoDB\" in your Cultivation settings. If this doesn't work, you must download MongoDB from <https://www.mongodb.com/try/download/community>.",
+    "action_cn": "启动在目录`C:\\Program Files\\MongoDB\\Server\\<version>\\bin`中的 `mongod.exe`"
+  },
+
+  {
+    "keywords": ["TypeAnnotationsScanner"],
+    "action": "Edit the reflection version in `build.gradle` to: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`",
+    "action_cn": "更改`build.gradle`中的reflection版本为: \n\n `implementation group: 'org.reflections', name: 'reflections', version: '0.10.2'`"
+  },
+
+  {
+    "keywords": ["missing weights"],
+    "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json",
+    "action_cn": "替换resources/ExcelBinOutput目录里的这些文件:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
+  },
+
+  {
+    "keywords": ["internal server error"],
+    "action": "The feature is probably not yet implemented :pensive:",
+    "action_cn": "该功能可能在目前并没有实现:pensive:"
+  },
+  {
+    "keywords": ["服务器内部错误"],
+    "action": "The feature is probably not yet implemented :pensive:",
+    "action_cn": "该功能可能在目前并没有实现:pensive:"
+  },
+
+  {
+    "keywords": ["4206"],
+    "action": "If you have the 4206 error, either your encryption settings are incorrect (please disable encryption in Cultivation settings) or your device has not reached the server. Please make sure that Cultivation's proxy is turned on in the settings panel and that encryption is disabled.",
+    "action_cn": "你的设备并没有正常连接到服务器，检查你的代理设置(Fiddler, mitm, 等)然后重试。"
+  },
+
+  {
+    "keywords": [
+      "where can i find ExcelBinOutput",
+      "where can i find BinOutput",
+      "where is ExcelBinOutput",
+      "where is BinOutput",
+      "where can i find the ExcelBinOutput",
+      "where can i find the BinOutput",
+      "where is the ExcelBinOutput",
+      "where is the BinOutput",
+      "where can i download ExcelBinOutput",
+      "where can i download BinOutput"
+    ],
+    "action": "You can get them all from here: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
+  },
+
+  {
+    "keywords": [
+      "ExcelBinOutput在哪里",
+      "BinOutput在哪里",
+      "ExcelBinOutput哪里找",
+      " BinOutput哪里找",
+      "哪里能找到ExcelBinOutput",
+      "哪里能找到BinOutput",
+      "该去哪里找ExcelBinOutput",
+      "该去哪里找BinOutput",
+      "ExcelBinOutput哪里下载",
+      "BinOutput哪里下载",
+      "ExcelBinOutput哪里有",
+      "BinOutput哪里有"
+    ],
+    "action": "ExcelBinOutput: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
+  },
+
+  {
+    "keywords": [
+      "item id",
+      "char id",
+      "character id",
+      "artifact id",
+      "reliquary id"
+    ],
+    "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
+  },
+
+  {
+    "keywords": ["物品id", "人物id", "制造品id", "圣遗物id"],
+    "action": "通过执行命令`java -jar grasscutter.jar -handbook`生成\"游戏数据大全\"\n或者\n\n使用Discord命令`/gm <query>`"
+  },
+
+  {
+    "keywords": ["scene ids"],
+    "action": "You can find them in your ExcelBinOutput folder (SceneExcelConfigData.json)"
+  },
+
+  {
+    "keywords": ["场景id"],
+    "action": "在ExcelBinOutput目录里你能找到它们 (SceneExcelConfigData.json)"
+  },
+
+  {
+    "keywords": ["Conv inconsistency"],
+    "action": "This usually happens when you restart the server with active connections, but receiving packets fail because the server doesn't recognise the session. It should go away after a while when the client tries to reconnect",
+    "action_cn": "这个错误通常在你有活跃的客户端连接着服务端的同时重启了服务端所导致，服务端接收的包错误的原因是无法识别会话，这个错误会在客户端尝试重新连接后消失。"
+  },
+
+  {
+    "keywords": ["4214"],
+    "action": "You haven't patched your game correctly. Please enable Enable \"Automatically Patch RSA\" in your Cultivation settings."
+  },
+
+  {
+    "keywords": ["system error"],
+    "action": "System error has three causes:\n1.Grasscutter is not running (either you didn't start it or an error caused it to stop running)\n2.Encryption is enabled (you must disable it in Cultivation settings)\n3.Wrong port/address\nPlease make sure to check these possibilites."
+  },
+
+  {
+    "keywords": ["white screen"],
+    "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. This means that your Grasscutter and game version do not match. They *must* be the same for you to be able to play. Please update Grasscutter."
+  }
 ]
