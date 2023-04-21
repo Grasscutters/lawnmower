@@ -1,7 +1,7 @@
 [
   {
     "keywords": ["Address already in use", "java.net.BindException"],
-    "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. \n Run `netstat -aon | find /i \"listening\"` to see what ports are listening. Then kill the process with `taskkill /PID <PID>`",
+    "action": "Check if something is running in these ports: `8888, 443, 80, 22102`. It's likely that is the thing stopping your server from starting. In most cases, you have more than one instance of Grasscutter running. Please press Ctrl+C twice in all but one of your Grasscutter instances, and then press the X button to close the windows. If this does not work, you will need to press Windows and R at the same time, type `taskmgr`, press OK, and then find and end any Java TM Platform SE Binary processes. If this still persists, you will need to press Windows and R, type `cmd`, press OK, run `netstat -aon | find /i \"listening\"` to see what processes have ports listening, then kill the processes with `taskkill /PID <PID>`",
     "action_cn": "检查是否有其他程序占用了这些端口: `8888, 443, 80, 22102`. 看起来这些占用端口的程序程序阻止了你的程序启动. \n 执行 `netstat -aon | find /i \"listening\"` 来查看占用端口的程序，然后通过执行`taskkill /PID <PID>`来终结它们"
   },
 
@@ -19,7 +19,7 @@
 
   {
     "keywords": ["not have permission"],
-    "action": "Enter `/permission add <username> *` in your console",
+    "action": "Enter `permission add USERNAME *` in your Grasscutter console. Replace `USERNAME` with the username you've given to your account. ",
     "action_cn": "在你正在运行服务端的终端里输入 `/permission add <username> *`并回车"
   },
 
@@ -149,11 +149,11 @@
 
   {
     "keywords": ["system error"],
-    "action": "System error has three causes:\n1.Grasscutter is not running (either you didn't start it or an error caused it to stop running)\n2.Encryption is enabled (you must disable it in Cultivation settings)\n3.Wrong port/address\nPlease make sure to check these possibilites."
+    "action": "System error has three causes:\n1. Grasscutter is not running (either you didn't start it or an error caused it to stop running)\n2. Encryption is enabled (you must disable it in Cultivation settings)\n3. Wrong port/address\nPlease make sure to check these possibilites."
   },
 
   {
     "keywords": ["white screen"],
-    "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. This means that your Grasscutter and game version do not match. They *must* be the same for you to be able to play. Please update Grasscutter."
+    "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. They *must* be the same for you to be able to play. Please update Grasscutter."
   }
 ]
