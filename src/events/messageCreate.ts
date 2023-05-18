@@ -1,68 +1,82 @@
-import source from '../db/source.json';
-import blacklist from '../db/blacklist.json';
-import Logger from '../util/Logger';
+import source from "../db/source.json";
+import blacklist from "../db/blacklist.json";
+import Logger from "../util/Logger";
 import { Message, ThreadChannel } from "discord.js";
-const c = new Logger('messageCreate');
+const c = new Logger("messageCreate");
 
 function buildSearch(substrings: string[]) {
-    return new RegExp(
-        substrings
-            .map(function (s) {
-                return s.replace(/[.*+?^${}()|[\]\\]/gi, '\\$&');
-            })
-            .join('{1,}|') + '{1,}'
-        , 'gi');
+  return new RegExp(
+    substrings
+      .map(function (s) {
+        return s.replace(/[.*+?^${}()|[\]\\]/gi, "\\$&");
+      })
+      .join("{1,}|") + "{1,}",
+    "gi"
+  );
 }
 
 const regexList: RegExp[] = [];
 const actionList: {
-    action?: string;
-    action_cn?: string;
-    keywords: string[];
+  action?: string;
+  action_cn?: string;
+  keywords: string[];
 }[] = [];
-source.forEach(s => {
-    regexList.push(buildSearch(s.keywords));
-    actionList.push({ action: s.action, keywords: s.keywords, action_cn: s.action_cn });
+source.forEach((s) => {
+  regexList.push(buildSearch(s.keywords));
+  actionList.push({
+    action: s.action,
+    keywords: s.keywords,
+    action_cn: s.action_cn,
+  });
 });
 
-const $support = '1019987283593674883';
+const $support = "1019987283593674883";
 
 function filterInvis(content: string) {
-    if (content.search(/[^\u0000-\u007E]/g) >= -1)
-        return content.replace(/[^\u0000-\u007E]/g, "");
-    else
-        return content;
+  if (content.search(/[^\u0000-\u007E]/g) >= -1)
+    return content.replace(/[^\u0000-\u007E]/g, "");
+  else return content;
 }
 
 export default async function run(message: Message) {
-    try {
-        if (message.author.bot) return;
+  try {
+    if (message.author.bot) return;
 
-        if (message.channelId === "1028327705571238009" && message.deletable) { // #verify
-            message.delete();
-        }
-
-        blacklist.forEach(b => {
-            if (filterInvis(message.content.toLowerCase().split(' ').join('')).includes(b.toLowerCase())) {
-                message.delete();
-            }
-        });
-
-        c.trail(`<${message.author.username}#${message.author.discriminator}> ${message.content}`);
-
-        if ((<ThreadChannel>message.channel).parentId !== $support) return;
-
-        regexList.forEach(async regex => {
-            if (regex.test(message.content.replaceAll(/\<\@\!?\d+\>/gi, ""))) { // TODO: Check message.thread.name
-                const action = actionList.find(a => a.keywords.some(k => regex.test(k)));
-                message.react('👀');
-                if (action && action.action) {
-                    message.reply(action.action);
-                    c.trail(`Match found for ${action.keywords[0]}`)
-                }
-            }
-        });
-    } catch(e) {
-        console.error(e);
+    if (message.channelId === "1028327705571238009" && message.deletable) {
+      // #verify
+      message.delete();
     }
+
+    blacklist.forEach((b) => {
+      if (
+        filterInvis(message.content.toLowerCase().split(" ").join("")).includes(
+          b.toLowerCase()
+        )
+      ) {
+        message.delete();
+      }
+    });
+
+    c.trail(
+      `<${message.author.username}#${message.author.discriminator}> ${message.content}`
+    );
+
+    if ((<ThreadChannel>message.channel).parentId !== $support) return;
+
+    regexList.forEach(async (regex) => {
+      if (regex.test(message.content.replaceAll(/\<\@\!?\d+\>/gi, ""))) {
+        // TODO: Check message.thread.name
+        const action = actionList.find((a) =>
+          a.keywords.some((k) => regex.test(k))
+        );
+        message.react("👀");
+        if (action && action.action) {
+          message.reply(action.action);
+          c.trail(`Match found for ${action.keywords[0]}`);
+        }
+      }
+    });
+  } catch (e) {
+    console.error(e);
+  }
 }
