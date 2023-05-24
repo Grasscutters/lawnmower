@@ -3,5 +3,7 @@ import Logger from "../util/Logger";
 const c = new Logger("guildMemberAdd");
 
 export default async function run(member: GuildMember) {
-    c.trail(`${member.user.username}#${member.user.discriminator} joined the server.`);
+  c.trail(
+    `${member.user.username}#${member.user.discriminator} joined the server.`
+  );
 }

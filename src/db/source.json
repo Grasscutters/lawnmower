@@ -54,12 +54,6 @@
   },
 
   {
-    "keywords": ["missing weights"],
-    "action": "Replace these in your resources/ExcelBinOutput folder:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json",
-    "action_cn": "替换resources/ExcelBinOutput目录里的这些文件:\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryMainPropExcelConfigData.json\n\nhttps://github.com/Koko-boya/Grasscutter_Resources/blob/main/Resources/ExcelBinOutput/ReliquaryAffixExcelConfigData.json"
-  },
-
-  {
     "keywords": ["internal server error"],
     "action": "The feature is probably not yet implemented :pensive:",
     "action_cn": "该功能可能在目前并没有实现:pensive:"
@@ -78,47 +72,13 @@
 
   {
     "keywords": [
-      "where can i find ExcelBinOutput",
-      "where can i find BinOutput",
-      "where is ExcelBinOutput",
-      "where is BinOutput",
-      "where can i find the ExcelBinOutput",
-      "where can i find the BinOutput",
-      "where is the ExcelBinOutput",
-      "where is the BinOutput",
-      "where can i download ExcelBinOutput",
-      "where can i download BinOutput"
-    ],
-    "action": "You can get them all from here: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
-  },
-
-  {
-    "keywords": [
-      "ExcelBinOutput在哪里",
-      "BinOutput在哪里",
-      "ExcelBinOutput哪里找",
-      " BinOutput哪里找",
-      "哪里能找到ExcelBinOutput",
-      "哪里能找到BinOutput",
-      "该去哪里找ExcelBinOutput",
-      "该去哪里找BinOutput",
-      "ExcelBinOutput哪里下载",
-      "BinOutput哪里下载",
-      "ExcelBinOutput哪里有",
-      "BinOutput哪里有"
-    ],
-    "action": "ExcelBinOutput: \n<https://github.com/Koko-boya/Grasscutter_Resources>"
-  },
-
-  {
-    "keywords": [
       "item id",
       "char id",
       "character id",
       "artifact id",
       "reliquary id"
     ],
-    "action": "Generate the GM handbook using `java -jar grasscutter.jar -handbook`\n\nOR\n\nUse the Discord command `/gm <query>`"
+    "action": "Find the GM handbook inside your Grasscutter folder\n\nOR\n\nUse the Discord command `/gm <query>`"
   },
 
   {
@@ -144,12 +104,12 @@
 
   {
     "keywords": ["4214"],
-    "action": "You haven't patched your game correctly. Please enable Enable \"Automatically Patch RSA\" in your Cultivation settings."
+    "action": "You haven't patched your game correctly. Please enable \"Automatically Patch RSA\" in your Cultivation settings."
   },
 
   {
     "keywords": ["system error"],
-    "action": "System error has three causes:\n1. Grasscutter is not running (either you didn't start it or an error caused it to stop running)\n2. Encryption is enabled (you must disable it in Cultivation settings)\n3. Wrong port/address\nPlease make sure to check these possibilites."
+    "action": "System error has four causes:\n1. Grasscutter is not running (either you didn't start it or an error caused it to stop running)\n2. Encryption is enabled (you must disable it in Cultivation settings)\n3. Wrong port/address (if you're connecting to a local server, the correct port and address is `localhost` and `443`)\n4.You have \"use HTTPS\" checked on the Cultivation home screen.\nPlease make sure to check these possibilites."
   },
 
   {
