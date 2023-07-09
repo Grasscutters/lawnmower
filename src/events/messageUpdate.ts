@@ -1,4 +1,4 @@
-import { Message, PartialMessage } from "discord.js";
+import { Colors, Message, PartialMessage } from "discord.js";
 import Logger from "../util/Logger";
 import sendToLog from "../util/sendToLog";
 import blacklist from "../db/blacklist.json";
@@ -28,7 +28,7 @@ export default async function run(
   sendToLog(
     `Message edited in ${newMessage.channel.toString()}`,
     `New message: ${newMessage.content}\nID: ${newMessage.id}`,
-    "Blue",
+    Colors.Blue,
     newMessage.author,
     oldMessage.client
   );

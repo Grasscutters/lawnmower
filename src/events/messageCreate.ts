@@ -64,7 +64,7 @@ export default async function run(message: Message) {
     if ((<ThreadChannel>message.channel).parentId !== $support) return;
 
     regexList.forEach(async (regex) => {
-      if (regex.test(message.content.replaceAll(/\<\@\!?\d+\>/gi, ""))) {
+      if (regex.test(message.content.replace(/\<\@\!?\d+\>/gi, ""))) {
         // TODO: Check message.thread.name
         const action = actionList.find((a) =>
           a.keywords.some((k) => regex.test(k))

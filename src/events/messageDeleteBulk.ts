@@ -1,4 +1,4 @@
-import { Collection, Message, PartialMessage } from "discord.js";
+import { Collection, Colors, Message, PartialMessage } from "discord.js";
 import Logger from "../util/Logger";
 import sendToLog from "../util/sendToLog";
 const c = new Logger("messageDeleteBulk", "red");
@@ -15,7 +15,7 @@ export default async function run(
     sendToLog(
       `Message deleted in ${message.channel.toString()}`,
       `Message deleted: ${message.cleanContent}`,
-      "Red",
+      Colors.Red,
       message.author,
       message.client,
       Array.from(message.attachments.values())

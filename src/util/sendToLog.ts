@@ -5,18 +5,19 @@
 
 import {
   Client,
-  ColorResolvable,
   Attachment,
   TextChannel,
   User,
+  Colors,
 } from "discord.js";
 import Logger from "./Logger";
 const c = new Logger("sendToLog");
+type ValueOf<T> = T[keyof T];
 
 export default async function sendToLog(
   title: string,
   description: string,
-  color: ColorResolvable,
+  color: ValueOf<typeof Colors>,
   user: User | null,
   client: Client,
   attachments?: Attachment[]
@@ -34,15 +35,14 @@ export default async function sendToLog(
     color: color,
     footer: {
       text: user?.tag || "Unknown",
-      iconURL: `https://cdn.discordapp.com/avatars/${user?.id || 0}/${
-        user?.avatar || 0
-      }.png`,
+      iconURL: `https://cdn.discordapp.com/avatars/${user?.id || 0}/${user?.avatar || 0
+        }.png`,
     },
-    timestamp: Date.now(),
+    timestamp: new Date().toISOString(),
   };
   await channel.send({
     embeds: [embed],
     content: "** **",
-    attachments: attachments || undefined,
+    files: attachments,
   });
 }

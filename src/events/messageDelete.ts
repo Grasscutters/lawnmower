@@ -1,4 +1,4 @@
-import { Message } from "discord.js";
+import { Colors, Message } from "discord.js";
 import Logger from "../util/Logger";
 import sendToLog from "../util/sendToLog";
 const c = new Logger("messageDelete", "red");
@@ -10,7 +10,7 @@ export default async function run(message: Message) {
   sendToLog(
     `Message deleted in ${message.channel.toString()}`,
     message.cleanContent,
-    "Red",
+    Colors.Red,
     message.author,
     message.client
   ); // TODO: Add attachments
