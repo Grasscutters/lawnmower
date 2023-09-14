@@ -4,7 +4,7 @@ import { CommandInteraction } from "discord.js";
 async function run(interaction: CommandInteraction) {
   const who = interaction.options.getUser("who");
   interaction.reply({
-    content: `${interaction.user.toString()} has segs with ${who?.username ?? "nobody (0 bitches)"}.`,
+    content: who ? `${interaction.user.toString()} has segs with <@${who.id}>.` : `${interaction.user.toString()} has no bitches :skull:`,
   });
 }
 
