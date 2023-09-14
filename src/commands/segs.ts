@@ -2,19 +2,19 @@ import { SlashCommandBuilder } from "@discordjs/builders";
 import { CommandInteraction } from "discord.js";
 
 async function run(interaction: CommandInteraction) {
-  const who = interaction.options.getString("who");
+  const who = interaction.options.getUser("who");
   interaction.reply({
-    content: `${interaction.user.toString()} has segs with ${who}.`,
+    content: `${interaction.user.toString()} has segs with ${who?.username ?? "nobody (0 bitches)"}.`,
   });
 }
 
 const cmd = new SlashCommandBuilder()
   .setName("segs")
   .setDescription("Have segs")
-  .addStringOption((o) =>
+  .addUserOption((o) =>
     o
       .setName("who")
-      .setDescription("Who/what/whatever to seg")
+      .setDescription("Who to seg")
       .setRequired(true)
   );
 
