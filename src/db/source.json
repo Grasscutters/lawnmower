@@ -104,7 +104,7 @@
 
   {
     "keywords": ["4214"],
-    "action": "You haven't patched your game correctly. Please enable \"Automatically Patch RSA\" in your Cultivation settings."
+    "action": "You haven't patched your game correctly or your client version is mismatching with the server's version. Please enable \"Automatically Patch RSA\" in your Cultivation settings, or downgrade/upgrade your game/Grasscutter"
   },
 
   {
@@ -115,5 +115,9 @@
   {
     "keywords": ["white screen"],
     "action": "If you are getting a white screen, then your Grasscutter version and game version do not match. They *must* be the same for you to be able to play. Please update Grasscutter."
+  },
+  {
+    "keywords": ["502"],
+    "action": "There are two causes for this error:\n1. You have \"Use HTTPS\" checked in your local server\n2. Your device cannot reach the server.\nPlease uncheck \"Use HTTPS\" or make sure your device can reach the server."
   }
 ]
