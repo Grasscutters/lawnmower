@@ -1,10 +1,19 @@
 import { SlashCommandBuilder } from "@discordjs/builders";
 import { CommandInteraction } from "discord.js";
 
+const FORCE_NO_BITCHES_USER_ID = "593787701409611776";
+
 async function run(interaction: CommandInteraction) {
   const who = interaction.options.getUser("who");
+  const noBitches =
+    !who ||
+    who.id === interaction.user.id ||
+    interaction.user.id === FORCE_NO_BITCHES_USER_ID;
+
   interaction.reply({
-    content: who ? `${interaction.user.toString()} has segs with <@${who.id}>.` : `${interaction.user.toString()} has no bitches :skull:`,
+    content: noBitches
+      ? `${interaction.user.toString()} has no bitches :skull:`
+      : `${interaction.user.toString()} has segs with <@${who.id}>.`,
   });
 }
 
@@ -15,7 +24,7 @@ const cmd = new SlashCommandBuilder()
     o
       .setName("who")
       .setDescription("Who to seg")
-      .setRequired(true)
+      .setRequired(false)
   );
 
 let _;
